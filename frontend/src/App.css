@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Oswald:wght@300;600&family=Roboto+Mono:wght@300;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+}
+
+/* colors and styling */
+:root {
+    --primary-color: hsl(199, 100%, 33%);
+    --secondary-color: hsl(187, 85%, 43%);
+    --gradient-color: linear-gradient(to right, hsl(199, 100%, 33%), hsl(187, 85%, 43%));
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(201, 33%, 16%);
+    --textColor: hsl(240, 4%, 36%);
+    --whiteColorDeam: hsl(0, 0%, 100%, 0.5);
+    --greyText: rgb(190, 190, 190);
+    --inputColor: hs(239, 239, 239);
+    --bodyColor: rgb(240, 240, 246);
+    --cardBG: rgb(225, 225, 235);
+
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+
+}
+
+.section {
+    padding: 4rem 0 2rem;
+}
+
+.container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.icon {
+    font-size: 2rem;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.grid {
+    display: grid;
+    align-items: center;
+}
+
+.btn {
+    padding: 0.6rem 1.5rem;
+    background: var(--gradient-color);
+    border-radius: 3rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: var(--secondary-color);
+}
+
+.btn a {
+    color: var(--whiteColor);
+    font-weight: 500;
+
+}
+
+img,
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+input {
+    font-size: 100%;
+}
+
+body {
+    background: var(--bodyColor);
+}
