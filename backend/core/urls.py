@@ -4,6 +4,6 @@ from django.urls import path
 from .views import PropertyListCreateView, PropertyDetailView
 
 urlpatterns = [
-    path('api/properties/', PropertyListCreateView.as_view(), name='property-list-create'),
-    path('api/properties/<int:pk>/', PropertyDetailView.as_view(), name='property-detail'),
+    path('all/', PropertyListCreateView.as_view(), name='property-list-create'),
+    path('details/<int:pk>/', PropertyDetailView.as_view(), name='property-detail'),
 ]

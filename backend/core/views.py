@@ -5,7 +5,7 @@ from .models import Property
 from .serializers import PropertySerializer
 
 class PropertyListCreateView(generics.ListCreateAPIView):
-    queryset = Property.objects.all().order_by('-created_at')
+    queryset = Property.objects.all().order_by('-list_date')
     serializer_class = PropertySerializer
 
 class PropertyDetailView(generics.RetrieveUpdateDestroyAPIView):
