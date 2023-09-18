@@ -1,0 +1,102 @@
+/* Navbar.css */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    color: #fff;
+    
+}
+
+.logo img {
+    max-width: 100px;
+    max-height: 70px;
+    height: auto;
+}
+
+
+/*.brand-name {
+    font-weight: bold;
+    margin-left: 10px;
+    font-size: 18px;
+}
+*/
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Styling for the dropdown icon */
+.dropdown-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+/* Show the dropdown icon on screens with a width between 480px and 768px */
+@media (max-width: 768px) {
+    .navbar-left {
+        display: none;
+    }
+
+    .navbar-right {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        /* Adjust the dropdown's vertical position */
+        right: 20px;
+        background-color: #333;
+        z-index: 1;
+        padding: 10px;
+    }
+
+    .navbar-right.show-menu {
+        display: flex;
+    }
+
+    .dropdown-toggle {
+        display: block;
+    }
+}
+
+/* Styling for the Contact button (adjust as needed) */
+.nav-links.show-menu .rounded-button {
+    display: block;
+    margin-top: 20px;
+}
+
+/* Show the right side of the navbar on screens larger than 768px */
+@media (min-width: 769px) {
+    .navbar-left {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar-right {
+        display: flex;
+        align-items: center;
+    }
+
+    .dropdown-toggle {
+        display: none;
+    }
+}

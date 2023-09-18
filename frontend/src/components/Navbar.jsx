@@ -1,50 +1,44 @@
-import React, {useState}from 'react'
-import '../styles/header.css'
-import { AiFillCloseCircle } from 'react-icons/ai'
-import { PiDotsNineBold } from 'react-icons/pi'
+import React, { useState } from 'react';
+import '../styles/navbar.css'; // Import your CSS file for styling
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import Logo from '../assets/logo.png';
 
-const Header = () => {
-    const [active, setActive] = useState('navBar')
-    // Function to toggle the navbar
-    const showNav = () => {
-        setActive('navBar activeNavbar')
-    }
-    // Function to close the navbar
-    const removeNavbar = () => {
-        setActive('navBar')
-    }
-        return (
-            <section className='navbarSection'>
-                <header className='header flex'>
-                    <div className='logoDiv'>
-                        <a href='/' className='logo flex'><h1>Lux Consult</h1></a>
-                    </div>
-                    <div className={active}>
-                        <ul className='navLists flex'>
-                            <li className='navItem'><a href='/' className='navLink'>Home</a></li>
-                            <li className='navItem'><a href='/' className='navLink'>Sales</a></li>
-                            <li className='navItem'><a href='/' className='navLink'>Rental</a></li>
-                            <li className='navItem'><a href='/' className='navLink'>Invest</a></li>
-                            <li className='navItem'><a href='/' className='navLink'>Consult</a></li>
-                            <button className='btn'>
-                                <a href='/'>Contact</a>
-                            </button>
-                        </ul>
-                        <div onClick={removeNavbar}className='closeNavbar'>
-                            <AiFillCloseCircle className='icon' />
-                        </div>
-                    </div>
-               
-              
-                    <div onClick={showNav} className="toggleNavbar">
-                        <PiDotsNineBold className='icon' />
-                    </div>
-                </header>
-      
-            </section>
-        )
-    }
+function Navbar() {
+  const [isDropdownVisible, setIsDropdownVisible] = useState(false);
 
+  const toggleDropdown = () => {
+    setIsDropdownVisible(!isDropdownVisible);
+  };
 
+  return (
+    <nav className="navbar">
+      <div className="navbar-left">
+        {/* Logo */}
+        <div className="logo">
+          <img src={Logo} alt="Logo" />
+          
+        </div>
+      </div>
+      <div className={`navbar-right ${isDropdownVisible ? 'show-menu' : ''}`}>
+        {/* Navigation Links */}
+        <ul className="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/sales">Sales</a></li>
+          <li><a href="/rental">Rental</a></li>
+          <li><a href="/invest">Invest</a></li>
+          <li><a href="/consult">Consult</a></li>
+          {/* Rounded Button */}
+          <li><a href="/contact">Contact</a></li>
+          <li><button className="rounded-button">Button</button></li>
+        </ul>
+      </div>
+      {/* Dropdown Toggle */}
+      <div className="dropdown-toggle" onClick={toggleDropdown}>
+        <FontAwesomeIcon icon={faBars} />
+      </div>
+    </nav>
+  );
+}
 
-export default Header
+export default Navbar;

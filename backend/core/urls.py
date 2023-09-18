@@ -1,9 +1,9 @@
 # properties/urls.py
 
 from django.urls import path
-from .views import PropertyListCreateView, PropertyDetailView
+from . import views
 
 urlpatterns = [
-    path('all/', PropertyListCreateView.as_view(), name='property-list-create'),
-    path('details/<int:pk>/', PropertyDetailView.as_view(), name='property-detail'),
+    path('for-sale/', views.PropertyForSaleView.as_view(), name='property-for-sale'),
+    path('for-rent/', views.PropertyForRentView.as_view(), name='property-for-rent'),
 ]

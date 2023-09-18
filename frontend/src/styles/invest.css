@@ -1,0 +1,41 @@
+.invest-section {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.invest-content {
+    max-width: 800px;
+    margin: 0 auto;
+    
+}
+
+h2 {
+    font-size: 2rem;
+    /* Adjust font size as needed */
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1rem;
+    /* Adjust font size as needed */
+    margin-bottom: 30px;
+}
+
+.invest-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    resize: none;
+       
+    
+}
+
+.invest-button:hover {
+    background-color: #0056b3;
+    
+}

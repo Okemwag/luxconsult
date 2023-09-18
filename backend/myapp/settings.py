@@ -12,7 +12,7 @@ SECRET_KEY = 'django-insecure-3zy0((u-jt^bj@*7#vbtz@)9)2if3nio@1e80*bn9*7esmc%9+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -26,10 +26,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core.apps.CoreConfig',
+    "corsheaders",
     'rest_framework',
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -38,6 +41,14 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://localhost:8080",
+    "http://127.0.0.1:9000",
+]
+
 
 ROOT_URLCONF = 'myapp.urls'
 
@@ -69,6 +80,20 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+"""
+DATABASES = {  
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'SCHEMA_NAME',
+        'USER': 'Admin_name',
+        'PASSWORD': 'PASSWORD',
+        'HOST':'localhost',
+        'PORT':'3306',
+    }
+}
+"""
+
 
 
 # Password validation

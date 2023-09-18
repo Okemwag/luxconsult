@@ -4,11 +4,16 @@ from rest_framework import generics
 from .models import Property
 from .serializers import PropertySerializer
 
-class PropertyListCreateView(generics.ListCreateAPIView):
-    queryset = Property.objects.all().order_by('-list_date')
+class PropertyForSaleView(generics.ListAPIView):
     serializer_class = PropertySerializer
 
-class PropertyDetailView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Property.objects.all()
+    def get_queryset(self):
+        return Property.objects.filter(property_status='sale').order_by('-list_date')
+
+class PropertyForRentView(generics.ListAPIView):
     serializer_class = PropertySerializer
+
+    def get_queryset(self):
+        return Property.objects.filter(property_status='rent').order_by('-list_date')
+
 

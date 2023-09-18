@@ -1,56 +1,39 @@
-
-.hero {
-    position: relative;
+.main-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    margin:auto;
-    width: 100%;
-    padding-top: 10%;
-}
-
-
-.heroImage{
-    margin-top: 1.5rem;
-    position: relative;
-    display: block; 
+    height: 100vh;
     overflow: hidden;
-    margin-left:auto;
-    margin-right:auto;
-    width: 400px;
-    height: 400px;
-    object-fit: cover;
-    max-width: 100%;
-    border: 5px solid var(--whiteColor);
-
 }
 
-img {
-    width: 300%;
-    height: auto;
-    object-fit: cover;
-    top:0;
-    bottom:0;
-    position:absolute;
-    max-width: 100%;
-    resize:both;
-    overflow: hidden;
-    transform: scale(1.1);
-
-
-
-
-}
-
-@media screen and (max-width: 768px){
-    .heroImage{
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        max-width: 100%;
-    }
-}
+.cool-image {
+    width: 100rem;
+    max-width: 800px;
+    height: 500px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ddd;
+    border-radius: 4px;
     
+}
+
+.visible {
+    z-index: 1;
+}
+
+.hidden {
+    z-index: 0;
+}
+
+.cool-image img {
+    
+    
+    
+    
+   
+
+}
+
+.cool-image img:nth-child(1) {
+    animation: slide 20s linear infinite;
+    
+}
