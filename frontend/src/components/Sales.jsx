@@ -1,36 +1,43 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 import axios from 'axios';
+import '../styles/sales.css'; // Import the CSS file
 
-function ProductList() {
-  const [properties, setProperties] = useState([]);
+function Sales() {
+  const [propertyData, setPropertyData] = useState([]);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/v1/core/details/<int:pk>/')
-      .then((response) => setProperties(response.data))
-      .catch((error) => console.error('Error fetching data:', error));
+    // Fetch data from your Django API using Axios
+    axios.get('http://127.0.0.1:8000/api/v1/core/for-sale/')
+      .then((response) => {
+        // Limit the photos to a maximum of four
+        const limitedData = response.data.results.slice(0,4);
+        setPropertyData(limitedData);
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
   }, []);
 
-  // Slice the properties array to show a maximum of four properties
-  const displayedProperties = properties.slice(0, 4);
-
-  return (
-    <div className="property-list">
-      <h1 className="property-header">Latest Properties</h1>
-      <ul>
-        {displayedProperties.map((property) => (
-          <li className="property" key={property.id}>
-            <h2>{property.title}</h2>
-            <p>{property.description}</p>
-            <p>Price: ${property.price}</p>
-            <p>Unique ID: {property.unique_id}</p>
-            <img src={property.main_photo} alt={property.title} />
-          </li>
+    return (
+        <div>
+      <h1>Properties for Sale</h1>
+    <div className="sales-container">
+        {propertyData.map((property) => (
+        <div key={property.id} className="property-card">
+          <Link to={`/property/${property.id}`}>
+            <img src={property.main_photo} alt={property.title} className="property-image" />
+            <h2 className="property-title">{property.title}</h2>
+          </Link>
+          <p className="property-description">{property.description}</p>
+          <p className="property-details">
+            {property.bedrooms} Bedrooms | ${property.price}
+          </p>
+        </div>
         ))}
-      </ul>
-      <Link to="/sales">View All Properties</Link>
+        </div>        
     </div>
   );
 }
 
-export default ProductList;
+export default Sales;

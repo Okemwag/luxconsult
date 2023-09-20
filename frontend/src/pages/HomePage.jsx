@@ -1,12 +1,20 @@
 import React from 'react';
-import Header from '../components/Navbar';
-import Main from '../components/Main';
+import Navbar from '../components/Navbar';
+import Hero from '../components/Hero';
+import Sales from '../components/Sales';
+import Rental from '../components/Rentals';
+import Invest from '../components/Invest';
+import Footer from '../components/Footer';
 
 function Home() {
   return (
     <div>
-      <Header />
-      <Main />
+      <Navbar />
+          <Hero />
+          <Sales />
+          <Rental />
+          <Invest />
+            <Footer />
     </div>
   );
 }

@@ -7,13 +7,7 @@ class PropertyAdmin(admin.ModelAdmin):
     list_display = ['title', 'address', 
                     'price', 'bedrooms', 
                     'is_published', 
-                    'property_status',
-                    'main_photo',
-                    'photo1',
-                    'photo2',
-                    'photo3',
-                    'photo4',
-                    'photo5']
+                    'property_status']
     list_filter = ['title', 'address', 
                    'price', 'bedrooms', 
                    'is_published', 'created',

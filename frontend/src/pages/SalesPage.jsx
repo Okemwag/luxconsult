@@ -1,56 +1,40 @@
 // SalesPage.jsx
 
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'; // Import Link from React Router
+import { useParams } from 'react-router-dom'; // Import useParams to get the property ID
 import axios from 'axios';
 
-// Navbar component
-function Navbar() {
-  return (
-    <nav>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/sales">Sales</Link></li>
-        <li><Link to="/rental">Rental</Link></li>
-        <li><Link to="/invest">Invest</Link></li>
-        <li><Link to="/consult">Consult</Link></li>
-      </ul>
-    </nav>
-  );
-}
-
-// Footer component
-function Footer() {
-  return (
-    <footer>
-      <p>&copy; Your Company {new Date().getFullYear()}</p>
-    </footer>
-  );
-}
-
-// SalesPage component
 function SalesPage() {
-  const [properties, setProperties] = useState([]);
+  const [property, setProperty] = useState(null);
+  const { id } = useParams(); // Get the property ID from the URL parameter
 
   useEffect(() => {
-    // Fetch data from the API to get properties for sale
-    axios.get('http://127.0.0.1:8000/api/v1/core/sales/') // Adjust the API endpoint accordingly
-      .then((response) => setProperties(response.data))
-      .catch((error) => console.error('Error fetching data:', error));
-  }, []);
+    if (id) {
+      // Make an API request to fetch data for a specific property by ID
+      axios.get(`http://127.0.0.1:8000/api/v1/core/for-sale/${id}/`)
+        .then((response) => {
+          setProperty(response.data);
+        })
+        .catch((error) => {
+          console.error('Error fetching property data:', error);
+        });
+    }
+  }, [id]);
 
   return (
     <div>
-      <Navbar />
-      <h1>Sales Page</h1>
-      <div className="property-list">
-        {properties.map((property) => (
-          <div className="property" key={property.id}>
-            <img src={property.photo} alt={property.title} />
-          </div>
-        ))}
-      </div>
-      <Footer />
+      {property ? (
+        <div className="property-details">
+          <img src={property.main_photo} alt={property.title} />
+          <h2>{property.title}</h2>
+          <p>{property.address}</p>
+          <p>Bedrooms: {property.bedrooms}</p>
+          <p>Price: ${property.price}</p>
+            <p>{property.description}</p>
+        </div>
+      ) : (
+        <p>Loading...</p>
+      )}
     </div>
   );
 }

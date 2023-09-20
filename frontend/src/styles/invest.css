@@ -18,7 +18,8 @@ h2 {
 
 p {
     font-size: 1rem;
-    /* Adjust font size as needed */
+    font-weight:200;
+    font-family: 'Roboto', sans-serif;
     margin-bottom: 30px;
 }
 
@@ -31,6 +32,7 @@ p {
     cursor: pointer;
     transition: background-color 0.3s ease;
     resize: none;
+    border-radius: 5px;
        
     
 }

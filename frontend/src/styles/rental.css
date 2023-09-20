@@ -1,0 +1,67 @@
+.Header {
+    text-align: center;
+}
+
+
+.property-list {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 20px;
+ }
+
+ .property-item {
+     border: 1px solid #ccc;
+     display: flex;
+     flex-direction: column;
+     width: calc(25% - 20px);
+     /* Adjust the width based on your design */
+     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+     transition: transform 0.2s ease-in-out;
+ }
+
+ .property-item:hover {
+     transform: scale(1.02);
+ }
+
+ .property-image img {
+     max-width: 100%;
+     height: auto;
+ }
+
+ .property-details {
+     padding: 10px;
+     flex-grow: 1;
+ }
+
+
+.view-all-button {
+    position: fixed;
+    /* Add absolute positioning to the button */
+    bottom: 10px;
+    /* Adjust the bottom distance as needed */
+    right: 10px;
+    /* Adjust the right distance as needed */
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.view-all-button:hover {
+    background-color: #0056b3;
+}
+ /* Add additional styling as needed */
+
+@media (max-width: 760px) {
+    .property-list {
+        flex-direction: column;
+    }
+
+    .property-item {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
