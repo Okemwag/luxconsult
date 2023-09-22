@@ -1,3 +1,4 @@
+from djmoney.models.fields import MoneyField
 from django.db import models
 
 # Create your models here.
@@ -13,7 +14,7 @@ class Property(models.Model):
     address = models.CharField(max_length=200)
     description = models.TextField(verbose_name='Description', 
                                    default='Description of the property')
-    price = models.IntegerField(verbose_name='Price', default=0)
+    price = MoneyField(max_digits=14, decimal_places=0, default_currency='KES')
     bedrooms = models.IntegerField(verbose_name='Number of bedrooms',
                                    default=0)
     main_photo = models.ImageField(upload_to='photos/%Y/%m/%d/')
@@ -37,10 +38,11 @@ class Property(models.Model):
     photo5 = models.ImageField(upload_to='property_photos/',
                                null=True,
                                blank=True)
-
+    
+    
     
     
     def __str__(self):
-        return self.title
+        return f"{self.title}"
     
     

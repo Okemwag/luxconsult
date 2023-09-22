@@ -1,102 +1,66 @@
-/* Navbar.css */
+.logo img {
+    max-height:0%;
+    height:8%;
+    width:8%;
+}
+
+
+
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    padding: 10px 20px;
-    color: #fff;
-    
+        height: 80px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding: 0.5rem 0rem;
+        background-color: black;
+        z-index: 100;
+        box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
 }
-
-.logo img {
-    max-width: 100px;
-    max-height: 70px;
-    height: auto;
-}
-
-
-/*.brand-name {
-    font-weight: bold;
-    margin-left: 10px;
-    font-size: 18px;
-}
-*/
 
 .nav-links {
     list-style: none;
     display: flex;
-    align-items: center;
-    gap: 30px;
+    gap: 20px;
+    list-style-type: none;
+    margin: 0 1rem;
 }
 
-.nav-links li {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    margin-bottom: 10px;
-    position: relative;
-}
-
-.nav-links a {
+.nav-links li a {
     text-decoration: none;
-    color: #fff;
-    font-weight: bold;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 400;
 }
 
-/* Styling for the dropdown icon */
-.dropdown-toggle {
-    display: none;
-    cursor: pointer;
-}
 
-/* Show the dropdown icon on screens with a width between 480px and 768px */
-@media (max-width: 768px) {
-    .navbar-left {
-        display: none;
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
     }
 
     .navbar-right {
+        display: none;
+        
+    }
+
+    .hamburger-icon {
+        display:inline-flexbox;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+
+    .logo img {
+        max-height:0%;
+        height:16%;
+        width:16%;
+    }
+
+    
+    .show-menu .navbar-right {
         display: flex;
         flex-direction: column;
-        position: absolute;
-        top: 60px;
-        /* Adjust the dropdown's vertical position */
-        right: 20px;
-        background-color: #333;
-        z-index: 1;
-        padding: 10px;
-    }
-
-    .navbar-right.show-menu {
-        display: flex;
-    }
-
-    .dropdown-toggle {
-        display: block;
-    }
-}
-
-/* Styling for the Contact button (adjust as needed) */
-.nav-links.show-menu .rounded-button {
-    display: block;
-    margin-top: 20px;
-}
-
-/* Show the right side of the navbar on screens larger than 768px */
-@media (min-width: 769px) {
-    .navbar-left {
-        display: flex;
-        align-items: center;
-    }
-
-    .navbar-right {
-        display: flex;
-        align-items: center;
-    }
-
-    .dropdown-toggle {
-        display: none;
     }
 }

@@ -1,20 +1,22 @@
 /* RentalsPage.css */
 
-/* Container for the properties */
+
+.headerWrapper {
+    text-align: center;
+}
+
 .rentals-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 20px;
-    /* Add spacing between property cards */
+    
 }
 
-/* Property card */
+
 .property-card {
     flex: 1;
-    /* Each property card takes equal space in the container */
     max-width: calc(25% - 20px);
-    /* 25% width for each card with spacing */
     border: 1px solid #ccc;
     padding: 10px;
     box-sizing: border-box;
@@ -22,13 +24,13 @@
     flex-direction: column;
 }
 
-/* Property image */
+
 .property-image img {
     max-width: 100%;
     height: auto;
 }
 
-/* Property details */
+
 .property-details {
     margin-top: 10px;
 }
@@ -36,13 +38,13 @@
 /* Media query for small screens */
 @media (max-width: 768px) {
 
-    /* Adjust layout for small screens */
+    
     .rentals-container {
         flex-direction: column;
     }
 
     .property-card {
         max-width: 100%;
-        /* Full width for property cards on small screens */
+        
     }
 }

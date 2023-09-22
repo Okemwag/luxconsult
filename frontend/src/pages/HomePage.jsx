@@ -1,8 +1,9 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
+import About from '../components/About';
 import Sales from '../components/Sales';
-import Rental from '../components/Rentals';
+import Rentals from '../components/Rentals';
 import Invest from '../components/Invest';
 import Footer from '../components/Footer';
 
@@ -10,11 +11,12 @@ function Home() {
   return (
     <div>
       <Navbar />
-          <Hero />
-          <Sales />
-          <Rental />
-          <Invest />
-            <Footer />
+        <Hero />
+        <About />
+        <Sales />
+        <Rentals />
+        <Invest />
+        <Footer />
     </div>
   );
 }

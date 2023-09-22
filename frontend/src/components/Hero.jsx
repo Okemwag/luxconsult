@@ -11,14 +11,14 @@ function HeroSection() {
   const images = [House1, House2, LivingRoom, Couch, Outdoor];
 
   useEffect(() => {
-    // Automatically change the image every 5 seconds
+    // Automatically change the image every 8 seconds
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) =>
         (prevIndex + 1) % images.length
       );
     }, 8000);
 
-    // Clear the interval on component unmount to prevent memory leaks
+    
     return () => clearInterval(interval);
   }, [images.length]);
 

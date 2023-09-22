@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Oswald:wght@300;600&family=Roboto+Mono:wght@300;600&display=swap');
+
 
 * {
     margin: 0;
@@ -7,7 +7,7 @@
     font-family: 'Roboto Mono', monospace;
 }
 
-/* colors and styling */
+/*
 :root {
     --primary-color: hsl(199, 100%, 33%);
     --secondary-color: hsl(187, 85%, 43%);
@@ -22,9 +22,18 @@
     --cardBG: rgb(225, 225, 235);
 
 }
+*/
 
 a {
     text-decoration: none;
+}
+
+p {
+    
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+    font-family:'Montserrat', sans-serif;
 }
 
 li {
@@ -64,15 +73,9 @@ li {
     cursor: pointer;
 }
 
-.btn:hover {
-    background: var(--secondary-color);
-}
 
-.btn a {
-    color: var(--whiteColor);
-    font-weight: 500;
 
-}
+
 
 img,
 video {

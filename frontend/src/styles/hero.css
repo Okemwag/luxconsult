@@ -13,11 +13,11 @@
 
 .hero-image {
     width: 100%;
-    height: 100%;
+    height: 80%;
     transition: opacity 1s ease-in-out;
 }
 
-/* Fade-in and fade-out animation for the images */
+
 .hero-image.fade-out {
     opacity: 0;
 }

@@ -1,7 +1,11 @@
 /* Sales.css */
 
+.headerWrapper {
+    text-align:center;
+}
+
 .sales-container {
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 20px;
     padding: 20px;
@@ -45,9 +49,22 @@
     color: #666;
 }
 
+.view-all-button {
+
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
 /* Responsive styles for screens with a maximum width of 760px */
 @media (max-width: 760px) {
     .sales-container {
+        display:block;
         grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
     }
 }

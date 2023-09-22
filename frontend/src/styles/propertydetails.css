@@ -1,12 +1,19 @@
-/* PropertyDetails.css */
+/* This file contains the styles for the property details page */
 
 .property-details-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
     padding: 20px;
     gap: 20px;
+}
+
+.property-details-left {
+    flex: 1;
+}
+
+.property-details-right {
+    flex: 1;
 }
 
 .main-photo {
@@ -15,21 +22,40 @@
 }
 
 .additional-photos {
+    margin-top: 40px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 10px;
 }
 
 .additional-photo {
-    max-width: 100%;
+    max-width: calc(20% - 10px);
     height: auto;
 }
 
-/* Responsive styles for screens with a maximum width of 760px */
-@media (max-width: 760px) {
-    .additional-photos {
+
+@media (max-width: 768px) {
+    .property-details-container {
         flex-direction: column;
         align-items: center;
     }
+
+    .property-details-left,
+    .property-details-right {
+        flex: none;
+        width: 100%;
+    }
+
+    .additional-photos {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .additional-photo {
+        max-width: calc(33.33% - 10px);
+        
+    }
 }
+
+

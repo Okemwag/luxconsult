@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
-import '../styles/rentalspage.css'; // Import CSS for styling
+import '../styles/rentalspage.css'; 
 
 function RentalsPage() {
   const [rentalsData, setRentalsData] = useState([]);
-  const { id } = useParams();
+  
 
   useEffect(() => {
     // Make an API request to fetch data from the backend
@@ -20,7 +20,7 @@ function RentalsPage() {
 
   return (
     <div>
-      <h2>Properties for Rent</h2>
+      <h2 className='headerWrapper'>LATEST RENTAL PROPERTIES</h2>
       <div className="rentals-container">
         {rentalsData.map((property) => (
           <div className="property-card" key={property.id}>
@@ -29,15 +29,17 @@ function RentalsPage() {
             </div>
             <div className="property-details">
               <h3>
-                <Link to={`/property-details/${property.id}`}>{property.title}</Link>
-              </h3>
+                <Link to={`/property/${property.id}`}>{property.title}</Link>
+                    </h3>
+              <p>{property.description}</p>
               <p>{property.address}</p>
               <p>Bedrooms: {property.bedrooms}</p>
               <p>Price: ${property.price}</p>
             </div>
           </div>
         ))}
-      </div>
+          </div>
+          <Link to="/rental" className="view-all-button">View All</Link>
     </div>
   );
 }

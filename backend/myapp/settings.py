@@ -19,6 +19,7 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'jazzmin',
+    'djmoney',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -28,6 +29,7 @@ INSTALLED_APPS = [
     'core.apps.CoreConfig',
     "corsheaders",
     'rest_framework',
+    
 ]
 
 MIDDLEWARE = [
@@ -43,12 +45,11 @@ MIDDLEWARE = [
 ]
 
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://localhost:3001",
-    "http://localhost:8080",
-    "http://127.0.0.1:9000",
-]
+#CORS_ALLOWED_ORIGINS = ["http://localhost:3000"]
+
+CORS_ALLOW_ALL_ORIGINS = True  
+    
+
 
 
 REST_FRAMEWORK = {
@@ -92,9 +93,9 @@ DATABASES = {
 DATABASES = {  
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'SCHEMA_NAME',
-        'USER': 'Admin_name',
-        'PASSWORD': 'PASSWORD',
+        'NAME': 'luxconsult',
+        'USER': 'Admin',
+        'PASSWORD': '',
         'HOST':'localhost',
         'PORT':'3306',
     }
@@ -148,4 +149,11 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'gabrielokemwa83@gmail.com'
+EMAIL_HOST_PASSWORD = 'ubmqwhdovfejpoqx'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 

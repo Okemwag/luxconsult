@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import '../styles/sales.css'; // Import the CSS file
+import '../styles/sales.css'; 
 
 function Sales() {
   const [propertyData, setPropertyData] = useState([]);
@@ -21,21 +21,22 @@ function Sales() {
 
     return (
         <div>
-      <h1>Properties for Sale</h1>
+      <h1 className="headerWrapper">PROPERTIES FOR SALE</h1>
     <div className="sales-container">
         {propertyData.map((property) => (
         <div key={property.id} className="property-card">
-          <Link to={`/property/${property.id}`}>
+          <Link to={`property/${property.id}`}>
             <img src={property.main_photo} alt={property.title} className="property-image" />
             <h2 className="property-title">{property.title}</h2>
           </Link>
           <p className="property-description">{property.description}</p>
           <p className="property-details">
-            {property.bedrooms} Bedrooms | ${property.price}
+            {property.bedrooms} Bedrooms | Ksh{property.price}
           </p>
         </div>
         ))}
-        </div>        
+            </div>
+            <Link to="/sales" className="view-all-button">View All</Link>            
     </div>
   );
 }
