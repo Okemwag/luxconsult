@@ -1,64 +1,33 @@
 import React, { useState } from 'react';
-import Modal from 'react-modal';
 import '../styles/custommodal.css';
 
-const CustomModal = ({ isOpen, onRequestClose }) => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    interests: '',
-  });
+const FeedbackForm = () => {
+ const [formData, setFormData] = useState({ name: '', email: '', feedback: '' });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+ const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+ };
 
-  const handleSubmit = (e) => {
+ const handleSubmit = (e) => {
     e.preventDefault();
-     
-      // TO-DO:
-    // Send formData to the Django backend 
-    // Include logic to send an email notification in the backend
-    
-    onRequestClose();
-  };
+    console.log(formData);
+    setFormData({ name: '', email: '', feedback: '' });
+ };
 
-  return (
-    <Modal isOpen={isOpen} onRequestClose={onRequestClose}>
-      <h2>Fill in your details</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Name:</label>
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <label>Email:</label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <label>Interests:</label>
-          <input
-            type="text"
-            name="interests"
-            value={formData.interests}
-            onChange={handleChange}
-          />
-        </div>
-        <button type="submit">Submit</button>
-      </form>
-    </Modal>
-  );
+ return (
+    <form className="feedback-form" onSubmit={handleSubmit}>
+      <label htmlFor="name">Name:</label>
+      <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
+
+      <label htmlFor="email">Email:</label>
+      <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
+
+      <label htmlFor="feedback">Feedback:</label>
+      <textarea id="feedback" name="feedback" value={formData.feedback} onChange={handleChange} required />
+
+      <button type="submit">Submit</button>
+    </form>
+ );
 };
 
-export default CustomModal;
+export default FeedbackForm;

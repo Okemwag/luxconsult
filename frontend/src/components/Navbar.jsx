@@ -1,43 +1,69 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import '../styles/navbar.css'; 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
-import Logo from '../assets/logo.png';
+import { useState } from "react"
+import logo from '../assets/logo.png';
+import { motion } from "framer-motion"
+import "../styles/navbar.css"
 
-function Navbar() {
-  const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+const Header = () => {
 
-  const toggleDropdown = () => {
-    setIsDropdownVisible(!isDropdownVisible);
-  };
+    const [isOpen, setIsOpen] = useState(false)
 
-  return (
-    <nav className="navbar">
-      <div className="navbar-left">
-        
-        <div className="logo">
-          <img src={Logo} alt="Logo" />
+    // framer motion variant for navbar animation 
+    const navbar = {
+        open: () => ({
+          clipPath: 'polygon(0 100%, 100% 100%, 100% 0, 0 0)',
+          transition: {
+            type: "spring",
+            stiffness: 200,
+            restDelta: 1,
+          }
+        }),
+        closed: () => ({
+          clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)',
+          transition: {
+            delay: 0.5,
+            type: "spring",
+            stiffness: 400,
+            damping: 40
+          }
+        })
+    };
+
+    const navLinks = [
+        {lable: "Home", icon: "bx bx-home"},
+        {lable: "Sales", icon: "bx bx-briefcase"},
+        {lable: "Rentals", icon: "bx bx-edit"},
+        {lable: "Testimonials", icon: "bx bx-message-square-dots"},
+        {lable: "About us", icon: "bx bx-info-circle"},
+        {lable: "Contact us", icon: "bx bx-envelope"},
+    ]
+
+    return (
+        <div className="header">
+            <div className="header__logo">
+                <img src={logo} alt=""/>
+                <h1>LUXCONSULT</h1>
+            </div>
+            <div className="header__icon">
+                <i class='bx bx-menu' onClick={() => setIsOpen(isOpen => !isOpen)}></i>
+            </div>
+            <motion.ul 
+                className="header__nav"
+                animate={isOpen ? "open" : "closed"}
+                variants={navbar}
+            >
+                {navLinks.map((link) => (
+                 <li 
+                    className="nav-item" 
+                    key={link.lable}
+                    onClick={() => setIsOpen(isOpen => !isOpen)}
+                >
+                    <i className={link.icon}></i>
+                    {link.lable}
+                 </li>
+                ))}
+            </motion.ul>
         </div>
-      </div>
-      <div className={`navbar-right ${isDropdownVisible ? 'show-menu' : ''}`}>
-        
-        <ul className="nav-links">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/sales">Sales</Link></li>
-          <li><Link to="/rental">Rental</Link></li>
-          <li><Link to="/invest">Invest</Link></li>
-          <li><Link to="/footer">Consult</Link></li>
-          <li><Link to="/footer">Contact</Link></li>
-          
-        </ul>
-      </div>
-      
-      <div className="hamburger-icon" onClick={toggleDropdown}>
-        <FontAwesomeIcon icon={faBars} />
-      </div>
-    </nav>
-  );
+    )
 }
 
-export default Navbar;
+export default  Header

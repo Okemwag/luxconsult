@@ -1,10 +1,11 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Fauna+One&family=Inconsolata:wght@500&family=Montserrat:wght@500&family=Oswald:wght@300;600&family=Public+Sans&family=Roboto+Mono:wght@300;600&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Public Sans', sans-serif;
+    font-weight: 400;
 }
 
 /*
@@ -24,70 +25,11 @@
 }
 */
 
-a {
-    text-decoration: none;
-}
-
-p {
-    
-    font-size: 1.1rem;
-    line-height: 1.5rem;
-    font-weight: 400;
-    font-family:'Montserrat', sans-serif;
-}
-
-li {
-    list-style: none;
-
-}
-
-.section {
-    padding: 4rem 0 2rem;
-}
-
-.container {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-}
-
-.icon {
-    font-size: 2rem;
-}
-
-.flex {
+.app {
+    min-height: 100vh;
     display: flex;
-    align-items: center;
-}
-
-.grid {
-    display: grid;
-    align-items: center;
-}
-
-.btn {
-    padding: 0.6rem 1.5rem;
-    background: var(--gradient-color);
-    border-radius: 3rem;
-    border: none;
-    outline: none;
-    cursor: pointer;
-}
-
-
-
-
-
-img,
-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-input {
-    font-size: 100%;
-}
-
-body {
-    background: var(--bodyColor);
+    align-items: flex-end;
+    justify-content: center;
+    font-family: 'poppins';
+    background-color: #f4f5f0;
 }

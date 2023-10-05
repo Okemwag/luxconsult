@@ -47,3 +47,9 @@ class PropertyDetailView(generics.RetrieveAPIView):
     serializer_class = PropertySerializer
     queryset = Property.objects.all()
     lookup_field = 'id'
+    
+    
+class PropertyVideoView(generics.RetrieveAPIView):
+    serializer_class = PropertySerializer
+    queryset = Property.objects.all()
+    lookup_field = ['id', 'video']

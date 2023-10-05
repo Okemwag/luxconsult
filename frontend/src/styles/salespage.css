@@ -8,7 +8,7 @@
 
 
 .property-list {
-    display: flex;
+    display: block;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: space-between;
@@ -30,6 +30,9 @@
 .property-item a {
     text-decoration: none;
     color: inherit;
+    line-height: unset;
+    font-weight: 500;
+    font-size: 18px;
     
 }
 

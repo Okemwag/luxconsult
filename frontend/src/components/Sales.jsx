@@ -19,7 +19,45 @@ function Sales() {
       });
   }, []);
 
+    
     return (
+    <div className="container">
+     <div className="flex-column">
+       
+       <div className="sales-container">
+        <h1>LATEST LAUNCHES</h1>
+            <p>HassConsult offers investment-grade developments all over the City. The developments we offer have been conceptualized by our development team to be high quality assets using a data-driven approach in planning and design, that gears property for high rental returns and an escalated rate of capital growth.</p>
+        </div>
+      <Link to="/sales" className="view-all-button">
+        View All
+      </Link>
+    </div>
+    <div className="inline-wrap">
+      {propertyData.map((property) => (
+            <div key={property.id} className="property-card">
+             <Link to={`property/${property.id}`}>
+              <div className="image-wrapper">
+                <img src={property.main_photo} alt={property.title} className="property-image" />
+                
+              </div>
+              <h2 className="property-title">{property.title}</h2>
+            </Link>
+            <p className="property-details">
+              {property.bedrooms} Bedrooms | Ksh{property.price}
+            </p>
+          </div>
+          )
+          )}
+    </div>
+  </div>
+    );
+}
+
+    
+export default Sales;
+
+/*
+return (
         <div>
       <h1 className="headerWrapper">PROPERTIES FOR SALE</h1>
     <div className="sales-container">
@@ -40,5 +78,4 @@ function Sales() {
     </div>
   );
 }
-
-export default Sales;
+*/

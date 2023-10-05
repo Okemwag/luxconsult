@@ -38,7 +38,8 @@ class Property(models.Model):
     photo5 = models.ImageField(upload_to='property_photos/',
                                null=True,
                                blank=True)
-    
+    video = models.FileField(upload_to='videos_uploaded',null=True,
+                             blank=True)
     
     
     

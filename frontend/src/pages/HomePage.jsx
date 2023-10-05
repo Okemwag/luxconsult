@@ -1,22 +1,23 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import About from '../components/About';
 import Sales from '../components/Sales';
 import Rentals from '../components/Rentals';
 import Invest from '../components/Invest';
-import Footer from '../components/Footer';
+import Landing from '../components/Landing';
+
 
 function Home() {
   return (
     <div>
-      <Navbar />
+        
         <Hero />
-        <About />
+        <Landing />
         <Sales />
         <Rentals />
         <Invest />
-        <Footer />
+        <About />
+        
     </div>
   );
 }

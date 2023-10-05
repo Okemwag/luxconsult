@@ -1,19 +1,31 @@
 /* This file contains the styles for the property details page */
 
+
+
 .property-details-container {
     display: flex;
     align-items: flex-start;
     text-align: left;
     padding: 20px;
     gap: 20px;
+    min-height: 100vh;
 }
 
 .property-details-left {
     flex: 1;
+    height: 100%;
 }
 
 .property-details-right {
     flex: 1;
+    height:100%;
+}
+
+.property-details-right > BedOutline {
+    color:#00000;
+    height:250px;
+    width:250px;
+
 }
 
 .main-photo {
@@ -34,11 +46,12 @@
     height: auto;
 }
 
-
 @media (max-width: 768px) {
     .property-details-container {
         flex-direction: column;
         align-items: center;
+        padding: 10px;
+        /* Adjusted padding for smaller screens */
     }
 
     .property-details-left,
@@ -47,15 +60,18 @@
         width: 100%;
     }
 
+    .main-photo {
+        margin-bottom: 20px;
+        /* Added margin for better separation on smaller screens */
+    }
+
     .additional-photos {
-        flex-direction: row;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
     }
 
     .additional-photo {
-        max-width: calc(33.33% - 10px);
-        
+        max-width: 100%;
+        /* Full width for additional photos on smaller screens */
     }
 }
-
-
