@@ -1,5 +1,6 @@
 # Use a Node.js base image
-FROM node:14
+FROM node:20-alpine3.17
+
 
 # Set working directory
 WORKDIR /usr/src/app
@@ -14,7 +15,7 @@ RUN npm install
 COPY . .
 
 # Build the React app
-RUN npm run build
+RUN npm run 
 
 # Expose the port on which the React app will run
 EXPOSE 3000

@@ -9,6 +9,8 @@ WORKDIR /usr/src/backend
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
+# install psycopg2 dependencies
+
 
 # Install Python dependencies
 RUN pip install --upgrade pip
@@ -18,9 +20,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the entire backend directory to the container
 COPY . .
-
-# Expose the port on which the Django app will run
-EXPOSE 8000
 
 # Command to start the Django app
 CMD ["gunicorn", "--bind", "0.0.0.0:8000", "myapp.wsgi:application"]

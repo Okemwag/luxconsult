@@ -1,31 +1,42 @@
 version: '3'
 
 services:
-  frontend:
-    build:
-      context: ./frontend
-    ports:
-      - "3000:3000"
-    depends_on:
-      - backend
-
   backend:
     build:
       context: ./backend
+    expose:
+      - "8000"
+    volumes:
+      - ./backend:/app
+    env_file:
+      - .env.dev
+
+  frontend:
+    build:
+      context: ./frontend
+    expose:
+      - "3000"
+    volumes:
+      - ./frontend:/app
+    
+
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
     ports:
-      - "8000:8000"
-    environment:
-      - DEBUG=True
-      - DJANGO_DB_HOST=db
-      - DJANGO_DB_PORT=5432
+      - "80:80"
     depends_on:
-      - db
+      - backend
+      - frontend
 
-  db:
-    image: postgres:13
+  postgres:
+    image: postgres:15
     environment:
-      POSTGRES_DB: your_database_name
-      POSTGRES_USER: your_database_user
-      POSTGRES_PASSWORD: your_database_password
+      POSTGRES_DB: luxconsult
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
 
+     
 
+  
