@@ -32,5 +32,6 @@ frontend.pnp.js
 
 # production
 /build
+backend/staticfiles
 
 .vscode

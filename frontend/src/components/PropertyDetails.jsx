@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { BedOutline } from 'react-ionicons'
-import { render } from 'react-dom'
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import '../styles/propertydetails.css';
-//import Navbar from '../components/Navbar';
-//import Footer from '../components/Footer';
+
 
 function PropertyDetails() {
   const { id } = useParams();
@@ -41,7 +38,7 @@ function PropertyDetails() {
           <h2>{propertyData.title}</h2>
           <p>{propertyData.description}</p>
           <p>Price: Ksh:{propertyData.price}</p>
-          <p><BedOutline/>: {propertyData.bedrooms}</p>
+          <p>bedrooms: {propertyData.bedrooms}</p>
           <div className="additional-photos">
             {showAdditionalPhotos && (
               <>

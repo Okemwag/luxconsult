@@ -25,11 +25,3 @@
 }
 */
 
-.app {
-    min-height: 100vh;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    font-family: 'poppins';
-    background-color: #f4f5f0;
-}
