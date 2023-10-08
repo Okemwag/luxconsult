@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles/custommodal.css';
+import '../App.css';;
 
 const FeedbackForm = () => {
  const [formData, setFormData] = useState({ name: '', email: '', feedback: '' });

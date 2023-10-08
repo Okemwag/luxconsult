@@ -4,7 +4,7 @@ import House2 from '../assets/House2.jpg';
 import LivingRoom from '../assets/livingroom.jpg';
 import Couch from '../assets/couch.jpg';
 import Outdoor from '../assets/outdoor.jpg';
-import '../styles/hero.css';
+import '../App.css';
 
 function HeroSection() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -23,7 +23,7 @@ function HeroSection() {
   }, [images.length]);
 
   return (
-    <div className="hero-section">
+    <div className="overlay flex-column">
       <img
         src={images[currentImageIndex]}
         alt="Property"

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import '../styles/rentalspage.css'; 
+import '../App.css';
 
 function RentalsPage() {
   const [rentalsData, setRentalsData] = useState([]);

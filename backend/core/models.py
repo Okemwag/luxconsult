@@ -13,10 +13,10 @@ class Property(models.Model):
     title = models.CharField(verbose_name='Property Title', max_length=200)
     address = models.CharField(max_length=200)
     description = models.TextField(verbose_name='Description', 
-                                   default='Description of the property')
-    price = MoneyField(max_digits=14, decimal_places=0, default_currency='KES')
+                                   default='Description of the property', max_length=30)
+    price = MoneyField(max_digits=8, decimal_places=0, default_currency='KES')
     bedrooms = models.IntegerField(verbose_name='Number of bedrooms',
-                                   default=0)
+                                   default=4)
     main_photo = models.ImageField(upload_to='photos/%Y/%m/%d/')
     is_published = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True, editable=False)

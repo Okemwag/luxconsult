@@ -1,71 +1,101 @@
-import icon  from '../assets/icon.png'
-import { FaInstagram, FaDribbble, FaXTwitter, FaYoutube } from "react-icons/fa6";
-import '../styles/footer.css';
+//import icon  from '../assets/icon.png'
+//import { FaInstagram, FaDribbble, FaXTwitter, FaYoutube } from "react-icons/fa6";
+import '../App.css';
 
 
 
 const Footer = () => {
-    const links = [
-        [
-            {label : 'Company' , key: 'header-1'},
-            {label : 'About us' , key: 'item-1-1'},
-            {label : 'blog' , key: 'item-1-2'},
-            {label : 'Contact us' , key: 'item-1-3'},
-            {label : 'Pricing' , key: 'item-1-4'},
-            {label : 'Testimonials' , key: 'item-1-5'},
-        ],
-        [
-            {label : 'Support' , key: 'header-2'},
-            {label : 'Help center' , key: 'item-2-1'},
-            {label : 'Terms of service' , key: 'item-2-2'},
-            {label : 'Legal' , key: 'item-2-3'},
-            {label : 'Privacy policy' , key: 'item-2-4'},
-            {label : 'Status' , key: 'item-2-5'},
-        ]
-    ]
+    
     return (
-        <div className='footer'>
-            <div className="footer-company-info">
-                <div className="footer-img">
-                    <img src={icon} alt="" />
-                    <span>
-                        LuxConsult
-                    </span>
-                </div>
+        <footer className="bg-primary">
+  <div className="grid-container">
+    <div className="intro flex-column">
+      <h2 className="txt-white txt-light">LUX CONSULT</h2>
+      <small className="txt-grey">ABC PLACE WAIYAKI WAY</small>
+      <small className="txt-grey">P.O BOX 14090 - 00800</small>
+      <small className="txt-grey">NAIROBI</small>
+    </div>
+    <div className="links">
+      <h3 className="txt-white txt-light">COMPANY</h3>
+      <ul>
+        <li>
+          <a href="/" className="txt-grey">
+            Services
+          </a>
+        </li>
+        <li>
+          <a href="/" className="txt-grey">
+            Careers
+          </a>
+        </li>
+        <li>
+          <a href="/" className="txt-grey">
+            Latest News
+          </a>
+        </li>
+        <li>
+          <a href="/" className="txt-grey">
+            Privacy Policy
+          </a>
+        </li>
+        <li>
+          <a href="/" className="txt-grey">
+            Get In Touch
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div className="links">
+      <h3 className="txt-white txt-light">USEFUL LINKS</h3>
+      <ul>
+        <li>
+          <a href="/" className="txt-grey">
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="/" className="txt-grey">
+            Sales
+          </a>
+        </li>
+        <li>
+          <a href="/" className="txt-grey">
+            Rentals
+          </a>
+        </li>
+        <li>
+          <a href="/" className="txt-grey">
+            About
+          </a>
+        </li>
+        <li>
+          <a href="/" className="txt-grey">
+            Invest
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div className="contacts">
+      <h4 className="txt-white txt-light">SUBSCRIBE</h4>
+      <form action="#">
+        <input type="text" placeholder="Enter your email" />
+        <button type="submit" className="btn-primary">
+          subscribe
+        </button>
+      </form>
+      <h4 className="txt-white txt-light">SOCIAL</h4>
+      <div className="grid-3">
+        <i className="icon">i</i>
+        <i className="icon">f</i>
+        <i className="icon">g</i>
+      </div>
+    </div>
+  </div>
+</footer>
+
+        
                 
-                <div className='infos'>             
-                    <span>
-                        Copyright © 2023 ltd.
-                    </span>
-                    <span>
-                        All rights reserved
-                    </span>
-                </div>
-                <div className="footer-icons">
-                    <FaInstagram/>
-                    <FaDribbble/>
-                    <FaXTwitter/>
-                    <FaYoutube/>
-                </div>
-            </div>
-            <div className="footer-links">
-                    {links.map((col,index) => (
-                        <ul className={`col col-${index+1}`} key={`col-${index}`}>
-                            {col.map((link,index) => (
-                                <li key={`link-${col}-${index}`}>
-                                    {link.label}
-                                </li>
-                            ))}
-                        </ul>
-                    ))}
-            </div>
-            <div className="footer-form">
-                <label htmlFor="">
-                    Stay up to date
-                </label>
-                <input type="email" name="" id="" />
-            </div>
-        </div>
+            
     )
 }
 

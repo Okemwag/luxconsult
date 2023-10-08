@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import '../styles/rental.css'; 
+import '../App.css'; 
 
 function Rentals() {
   const [propertyData, setPropertyData] = useState([]);
@@ -22,7 +22,7 @@ function Rentals() {
     return (
         <div>
       <h1 className="headerWrapper">LATEST RENTAL PROPERTIES</h1>
-    <div className="sales-container">
+    <div className="container grid-3">
         {propertyData.map((property) => (
         <div key={property.id} className="property-card">
           <Link to={`property/${property.id}`}>

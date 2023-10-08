@@ -1,7 +1,7 @@
 import { useState } from "react"
 import logo from '../assets/logo.png';
 import { motion } from "framer-motion"
-import "../styles/navbar.css"
+import '../navbar.css';
 
 const Header = () => {
 
@@ -32,28 +32,28 @@ const Header = () => {
         {lable: "Home", icon: "bx bx-home"},
         {lable: "Sales", icon: "bx bx-briefcase"},
         {lable: "Rentals", icon: "bx bx-edit"},
-        {lable: "Testimonials", icon: "bx bx-message-square-dots"},
+        {lable: "Invest", icon: "bx bx-message-square-dots"},
         {lable: "About us", icon: "bx bx-info-circle"},
         {lable: "Contact us", icon: "bx bx-envelope"},
     ]
 
     return (
-        <div className="header">
+        <div className="headerb">
             <div className="header__logo">
                 <img src={logo} alt=""/>
-                <h1>LUXCONSULT</h1>
+                <p>LUXCONSULT</p>
             </div>
             <div className="header__icon">
                 <i class='bx bx-menu' onClick={() => setIsOpen(isOpen => !isOpen)}></i>
             </div>
             <motion.ul 
-                className="header__nav"
+                className="header__navb"
                 animate={isOpen ? "open" : "closed"}
                 variants={navbar}
             >
                 {navLinks.map((link) => (
                  <li 
-                    className="nav-item" 
+                    className="nav-itemu" 
                     key={link.lable}
                     onClick={() => setIsOpen(isOpen => !isOpen)}
                 >

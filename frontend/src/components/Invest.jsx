@@ -1,5 +1,6 @@
 import React from 'react'; 
-import '../styles/invest.css'; 
+import '../App.css'; 
+import  Gold from '../assets/gold.jpg';
 
 
 // Define the app element (the root of your application)
@@ -9,13 +10,25 @@ function Invest() {
 
 return (
     
-      <div className="invest-content">
-        <h2>Invest in Your Future with Real Estate</h2>
-        <p>
-          Are you ready to make your money work for you? Discover the world of real estate investment with us. Our carefully selected properties are designed not just for today but for your financial future. Whether you're a seasoned investor or just starting, we have opportunities that promise both security and growth.
-        </p>
-        <button className="invest-button">Invest Now</button>
-      </div>
+      <section>
+
+        <div class=" invest grid-2">
+
+                <img src={Gold} alt=""/>
+
+                <div class="text-container y-start x-start">
+                        <h1>INVEST IN YOUR FUTURE WITH REAL ESTATE</h1>
+
+                        <small class="txt-grey">
+
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam reiciendis perspiciatis repellendus, nobis, voluptas nesciunt, explicabo culpa laudantium fugit eum pariatur cum necessitatibus. Cupiditate, velit ad similique deleniti animi illo. Aperiam, distinctio quos quasi optio, delectus, quod corrupti perspiciatis impedit deserunt earum odio. Cupiditate magni, rerum, modi repudiandae accusamus doloribus delectus totam saepe cum 
+                        </small>
+
+                        <button class="btn btn-primary">Learn More</button>
+                </div>
+
+        </div>
+      </section>
     
   );
 

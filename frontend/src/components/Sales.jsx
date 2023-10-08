@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import '../styles/sales.css'; 
-import Couch from '../assets/couch.jpg';
+import '../App.css';
+
 
 function Sales() {
   const [propertyData, setPropertyData] = useState([]);
@@ -22,24 +22,24 @@ function Sales() {
 
     
     return (
-        <div className="container flex-column">
+        <div className="container grid-3">
             <div className=" sales-container x-start">
                 <h1>LATEST LAUNCHES</h1>
                      <p>HassConsult offers investment-grade developments all over the City. The developments we offer have been conceptualized by our development team to be high quality assets using a data-driven approach in planning and design, that gears property for high rental returns and an escalated rate of capital growth.
                       </p>
-                <Link to="/sales" className="view-all-button">
+                <Link to="/sales" className="btn btn-primary">
                      View All
                     </Link>
             </div>
      
-            <div className="properties">
+            <div className="properties-container grid-3">
                 
                 {propertyData.map((property) => (
                 
             <div key={property.id} className="property-card">
              <Link to={`property/${property.id}`}>
               <div className="image-wrapper">
-                <img src={Couch} alt={property.title} className="property-image" />
+                <img src={property.main_photo} alt={property.title} className="property-image" />
                 
               </div>
               <h2 className="property-title">{property.title}</h2>

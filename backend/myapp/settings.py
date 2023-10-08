@@ -15,8 +15,8 @@ SECRET_KEY = 'd14_gf(1i%ehgql%+!4auiuc=d&lq&o1%jw$fb5pc+l6ple5-0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-
-DEBUG =  bool(os.environ.get("DEBUG", default=0))
+DEBUG = True
+#DEBUG =  bool(os.environ.get("DEBUG", default=0))
 
 
 ALLOWED_HOSTS = ["*"]
@@ -152,9 +152,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_DIRS = (
-   os.path.join(BASE_DIR, 'static'),
-)
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
