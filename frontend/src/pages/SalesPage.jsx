@@ -20,9 +20,9 @@ function Sales() {
   return (
     <div>
       <h1 className='headerWrapper'>PROPERTIES FOR SALE</h1>
-      <div className="sales-container">
+      <div className="container x-start">
         {propertyData.map((property) => (
-          <Link to={`/property/${property.id}`} key={property.id} className="property-card">
+          <Link to={`/property/${property.id}`} key={property.id} className="img-container">
             <img src={property.main_photo} alt={property.title} className="property-image" />
             <div className="property-info">
               <h2 className="property-title">{property.title}</h2>

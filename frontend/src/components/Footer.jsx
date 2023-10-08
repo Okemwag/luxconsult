@@ -54,22 +54,22 @@ const Footer = () => {
           </a>
         </li>
         <li>
-          <a href="/" className="txt-grey">
+          <a href="/sales" className="txt-grey">
             Sales
           </a>
         </li>
         <li>
-          <a href="/" className="txt-grey">
+          <a href="/rental" className="txt-grey">
             Rentals
           </a>
         </li>
         <li>
-          <a href="/" className="txt-grey">
+          <a href="/sales" className="txt-grey">
             About
           </a>
         </li>
         <li>
-          <a href="/" className="txt-grey">
+          <a href="/home" className="txt-grey">
             Invest
           </a>
         </li>

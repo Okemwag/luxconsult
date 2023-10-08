@@ -21,7 +21,7 @@ return (
 
                         <small class="txt-grey">
 
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam reiciendis perspiciatis repellendus, nobis, voluptas nesciunt, explicabo culpa laudantium fugit eum pariatur cum necessitatibus. Cupiditate, velit ad similique deleniti animi illo. Aperiam, distinctio quos quasi optio, delectus, quod corrupti perspiciatis impedit deserunt earum odio. Cupiditate magni, rerum, modi repudiandae accusamus doloribus delectus totam saepe cum 
+                        Embark on a financial journey where aspirations meet returns. With strategic investments, we transform your dreams into tangible dividends, crafting a future of prosperity. Unleash the power of your money and watch it grow, as we navigate the markets together, making each investment a step towards lasting success and fulfillment. 
                         </small>
 
                         <button class="btn btn-primary">Learn More</button>

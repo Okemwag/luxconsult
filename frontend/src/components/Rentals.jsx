@@ -26,7 +26,7 @@ function Rentals() {
         {propertyData.map((property) => (
         <div key={property.id} className="property-card">
           <Link to={`property/${property.id}`}>
-            <img src={property.main_photo} alt={property.title} className="property-image" />
+            <img src={property.main_photo} alt={property.title} className="img-container" />
             <h2 className="property-title">{property.title}</h2>
           </Link>
           <p className="property-description">{property.description}</p>
@@ -36,7 +36,7 @@ function Rentals() {
         </div>
         ))}
             </div> 
-            <Link to="/rental" className="view-all-button">View All</Link>            
+            <Link to="/rental" className="btn btn-primary">View All</Link>            
     </div>
   );
 }

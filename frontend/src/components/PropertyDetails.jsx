@@ -34,7 +34,7 @@ function PropertyDetails() {
         <div className="property-details-left">
           <img src={propertyData.main_photo} alt={propertyData.title} className="main-photo" />
         </div>
-        <div className="property-details-right">
+        <div className="sales-container x-start">
           <h2>{propertyData.title}</h2>
           <p>{propertyData.description}</p>
           <p>Price: Ksh:{propertyData.price}</p>

@@ -1,5 +1,5 @@
 import React from 'react';
-import House2 from '../assets/House2.jpg';
+import House2 from '../assets/bay.jpg';
 import LivingRoom from '../assets/livingroom.jpg';
 import Couch from '../assets/couch.jpg';
 import '../App.css';
@@ -13,7 +13,7 @@ const ImageGallery = () => {
                         <img src={House2} alt=""/>
 
                         <p>DISCOVER OUR VIRTUAL TOURS</p>
-                        <button class="btn btn-primary">Learn More</button>
+                        <button class="btn btn-primary">START HERE</button>
                 </div>
 
                 <div class="img-container">
@@ -25,7 +25,7 @@ const ImageGallery = () => {
                 <div class="img-container">
                         <img src={Couch} alt=""/>
                         <p>EXPERIENCE OUR INSIGHTS</p>
-                        <button class="btn btn-primary">Learn More</button>
+                        <button class="btn btn-primary">INQUIRE NOW</button>
                 </div>
 
         </div>

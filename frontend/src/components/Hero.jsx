@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import House1 from '../assets/House1.jpg';
 import House2 from '../assets/House2.jpg';
-import LivingRoom from '../assets/livingroom.jpg';
+import LivingRoom from '../assets/bay.jpg';
 import Couch from '../assets/couch.jpg';
-import Outdoor from '../assets/outdoor.jpg';
+import Interior from '../assets/interior.jpg';
 import '../App.css';
 
 function HeroSection() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const images = [House1, House2, LivingRoom, Couch, Outdoor];
+  const images = [House1, House2, LivingRoom, Couch, Interior];
 
   useEffect(() => {
     // Automatically change the image every 8 seconds
