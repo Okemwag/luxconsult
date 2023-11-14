@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 services:
   backend:
@@ -20,22 +20,15 @@ services:
       - "3000"
     volumes:
       - ./frontend:/app
-    
 
-  nginx:
-    build: ./nginx
-    ports:
-      - "80:80"
-    depends_on:
-      - backend
-      - frontend
-
-  postgres:
+  db:
     image: postgres:15
     environment:
       POSTGRES_DB: luxconsult
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-
-     
-  
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./postgres.conf:/etc/postgresql/postgresql.conf
+      -

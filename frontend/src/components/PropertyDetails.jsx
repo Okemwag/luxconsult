@@ -11,9 +11,9 @@ function PropertyDetails() {
 
   useEffect(() => {
     // Fetch property details for the given propertyId using Axios
-    axios.get(`http://127.0.0.1:8000/api/v1/core/detail/${id}/`)
+    axios.get(`http://127.0.0.1:8000/api/v1/core/upload/1/`)
       .then((response) => {
-        setPropertyData(response.data);
+        setPropertyData(response.data.results);
         // Display additional photos after 3 seconds
         setTimeout(() => {
           setShowAdditionalPhotos(true);

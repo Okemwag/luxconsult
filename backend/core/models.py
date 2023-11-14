@@ -38,12 +38,17 @@ class Property(models.Model):
     photo5 = models.ImageField(upload_to='property_photos/',
                                null=True,
                                blank=True)
-    video = models.FileField(upload_to='videos_uploaded',null=True,
-                             blank=True)
-    
+     
     
     
     def __str__(self):
         return f"{self.title}"
     
     
+class VideoTour(models.Model):
+    property = models.OneToOneField(Property, on_delete=models.CASCADE)
+    video = models.FileField(upload_to='videos/%Y/%m/%d/')
+    
+    
+    def __str__(self):
+        return f"{self.property.title} Video Tour"

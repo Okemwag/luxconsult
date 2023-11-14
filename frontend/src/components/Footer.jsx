@@ -1,5 +1,4 @@
-//import icon  from '../assets/icon.png'
-//import { FaInstagram, FaDribbble, FaXTwitter, FaYoutube } from "react-icons/fa6";
+import React from 'react';
 import '../App.css';
 
 

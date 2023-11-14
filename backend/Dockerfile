@@ -1,25 +1,37 @@
-FROM python:3.11-slim-buster
+FROM python:3.11-slim
 
-
-
-# Set working directory
-WORKDIR /usr/src/backend
+LABEL maintainer='gabrielokemwa83@gmail.com'
+LABEL decription="Development image for Nexus Project"
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
+ENV DJANGO_ENV=development
 
-# install psycopg2 dependencies
+# Set the working directory to /app
+WORKDIR /app
+
+# Copy the requirements file into the container at /app
+COPY /requirements.txt /app/
 
 
-# Install Python dependencies
-RUN pip install --upgrade pip
-COPY ./requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+
+RUN python -m venv venv
+ENV PATH="/app/venv/bin:$PATH"
+
+# Install any needed packages specified in requirements.txt
+RUN pip install --upgrade pip && \
+    pip install -r requirements.txt
 
 
-# Copy the entire backend directory to the container
-COPY . .
 
-# Command to start the Django app
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "myapp.wsgi:application"]
+COPY . /app/
+
+
+EXPOSE 8000
+
+
+#RUN python manage.py collectstatic --noinput
+
+
+CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]

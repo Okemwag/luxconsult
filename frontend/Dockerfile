@@ -3,7 +3,7 @@ FROM node:20-alpine3.17
 
 
 # Set working directory
-WORKDIR /usr/src/app
+WORKDIR /app
 
 # Copy package.json and package-lock.json to the container
 COPY package*.json ./
