@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'core.apps.CoreConfig',
     "corsheaders",
     'rest_framework',
+    'drf_yasg',
     
 ]
 

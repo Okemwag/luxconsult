@@ -20,6 +20,9 @@ from rest_framework import status
 
 
 class PropertyForSaleView(generics.ListAPIView):
+    """
+    Lists all properties for sale
+    """
     serializer_class = PropertySerializer
 
     def get_queryset(self):
@@ -27,6 +30,9 @@ class PropertyForSaleView(generics.ListAPIView):
 
 
 class PropertyForRentView(generics.ListAPIView):
+    """
+    Lists all rental  properties 
+    """
     serializer_class = PropertySerializer
 
     def get_queryset(self):
@@ -34,12 +40,18 @@ class PropertyForRentView(generics.ListAPIView):
 
 
 class PropertyDetailView(generics.RetrieveAPIView):
+    """
+    Retrieves a property details by id
+    """
     serializer_class = PropertySerializer
     queryset = Property.objects.all()
     lookup_field = 'id'
 
 
 class VideoTourView(generics.RetrieveAPIView):
+    """
+    Retrieves a property video tour by id
+    """
     serializer_class = VideoTourSerializer
     queryset = Property.objects.all()
     lookup_field = 'id' 

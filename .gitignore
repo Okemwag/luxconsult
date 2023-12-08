@@ -31,7 +31,7 @@ frontend.pnp.js
 /coverage
 
 # production
-/build
+frontend/build
 backend/staticfiles
 
 .vscode
