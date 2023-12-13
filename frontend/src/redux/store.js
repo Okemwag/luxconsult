@@ -1,8 +1,17 @@
-// src/redux/store.js
-import { applyMiddleware, createStore } from 'redux';
-import thunk from 'redux-thunk';
-import propertiesReducer from './reducers';
+import { configureStore } from "@reduxjs/toolkit";
+import { setupListeners } from "@reduxjs/toolkit/query";
 
-const store = createStore(propertiesReducer, applyMiddleware(thunk));
+import { propertiesApi } from "./services/properties";
+
+const store = configureStore({
+  reducer: {
+    [propertiesApi.reducerPath]: propertiesApi.reducer,
+  },
+
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(propertiesApi.middleware),
+});
+
+setupListeners(store.dispatch);
 
 export default store;
