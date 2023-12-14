@@ -7,6 +7,8 @@ function RentalsPage() {
   const { data } = useGetForRentQuery();
   const [rentalsData, setRentalsData] = useState([]);
 
+  console.log(rentalsData);
+
   useEffect(() => {
     if (data) {
       // Limit the photos to a maximum of four
@@ -15,23 +17,10 @@ function RentalsPage() {
     }
   }, [data]);
 
-  /*
-    useEffect(() => {
-        // Make an API request to fetch data from the backend
-        axios.get('http://127.0.0.1:8000/api/v1/core/for-rent/')
-            .then((response) => {
-                setRentalsData(response.data.results);
-            })
-            .catch((error) => {
-                console.error('Error fetching rentals data:', error);
-            });
-    }, []);
-*/
-
   return (
     <section className="invest-section">
       <div class=" invest grid-2">
-        <img src={Gold} alt="" />
+        {/* <img src={Gold} alt="" /> */}
 
         <div class="text-container y-start x-start">
           <h1>INVEST IN YOUR FUTURE WITH REAL ESTATE</h1>
@@ -53,3 +42,5 @@ function RentalsPage() {
     </section>
   );
 }
+
+export default RentalsPage;

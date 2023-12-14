@@ -15,19 +15,6 @@ function Sales() {
     }
   }, [data]);
 
-  /*
-  useEffect(() => {
-    // Fetch all data from your Django API using Axios
-    axios.get('http://127.0.0.1:8000/api/v1/core/for-sale/')
-      .then((response) => {
-        setPropertyData(response.data.results);
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-      });
-  }, []);
-  */
-
   return (
     <div>
       <h1 className="headerWrapper">PROPERTIES FOR SALE</h1>

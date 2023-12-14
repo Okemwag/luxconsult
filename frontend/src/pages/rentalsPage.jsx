@@ -15,19 +15,6 @@ function RentalsPage() {
     }
   }, [data]);
 
-  /*
-  useEffect(() => {
-    // Make an API request to fetch data from the backend
-    axios.get('http://127.0.0.1:8000/api/v1/core/for-rent/')
-      .then((response) => {
-        setRentalsData(response.data.results);
-      })
-      .catch((error) => {
-        console.error('Error fetching rentals data:', error);
-      });
-  }, []);
-  */
-
   return (
     <div>
       <h2 className="headerWrapper">LATEST RENTAL PROPERTIES</h2>
