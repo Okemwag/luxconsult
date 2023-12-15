@@ -1,26 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
-import '../App.css';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import "../App.css";
+import { useGetForRentQuery } from "../redux/services/properties";
 
 function RentalsPage() {
+  const { data } = useGetForRentQuery();
   const [rentalsData, setRentalsData] = useState([]);
-  
 
   useEffect(() => {
-    // Make an API request to fetch data from the backend
-    axios.get('http://127.0.0.1:8000/api/v1/core/for-rent/')
-      .then((response) => {
-        setRentalsData(response.data.results);
-      })
-      .catch((error) => {
-        console.error('Error fetching rentals data:', error);
-      });
-  }, []);
+    if (data) {
+      // Limit the photos to a maximum of four
+      const limitedData = data.results.slice(0, 4);
+      setRentalsData(limitedData);
+    }
+  }, [data]);
 
   return (
     <div>
-      <h2 className='headerWrapper'>LATEST RENTAL PROPERTIES</h2>
+      <h2 className="headerWrapper">LATEST RENTAL PROPERTIES</h2>
       <div className="rentals-container">
         {rentalsData.map((property) => (
           <div className="property-card" key={property.id}>
@@ -30,7 +27,7 @@ function RentalsPage() {
             <div className="property-details">
               <h3>
                 <Link to={`/property/${property.id}`}>{property.title}</Link>
-                    </h3>
+              </h3>
               <p>{property.description}</p>
               <p>{property.address}</p>
               <p>Bedrooms: {property.bedrooms}</p>
@@ -38,8 +35,10 @@ function RentalsPage() {
             </div>
           </div>
         ))}
-          </div>
-          <Link to="/rental" className="view-all-button">View All</Link>
+      </div>
+      <Link to="/rental" className="view-all-button">
+        View All
+      </Link>
     </div>
   );
 }

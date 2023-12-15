@@ -1,11 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
-import '../App.css'; 
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import "../App.css";
+import { useGetForRentQuery } from "../redux/services/properties";
 
 function Rentals() {
+  const { data } = useGetForRentQuery();
   const [propertyData, setPropertyData] = useState([]);
 
+  useEffect(() => {
+    if (data) {
+      // Limit the photos to a maximum of four
+      const limitedData = data.results.slice(0, 4);
+      setPropertyData(limitedData);
+    }
+  }, [data]);
+
+  /*
   useEffect(() => {
     // Fetch data from your Django API using Axios
     axios.get('http://127.0.0.1:8000/api/v1/core/for-rent/')
@@ -18,25 +28,31 @@ function Rentals() {
         console.error('Error fetching data:', error);
       });
   }, []);
-
-    return (
-        <div>
+*/
+  return (
+    <div>
       <h1 className="headerWrapper">LATEST RENTAL PROPERTIES</h1>
-    <div className="container grid-3">
+      <div className="container grid-3">
         {propertyData.map((property) => (
-        <div key={property.id} className="property-card">
-          <Link to={`property/${property.id}`}>
-            <img src={property.main_photo} alt={property.title} className="img-container" />
-            <h2 className="property-title">{property.title}</h2>
-          </Link>
-          <p className="property-description">{property.description}</p>
-          <p className="property-details">
-            {property.bedrooms} Bedrooms | Ksh:{property.price}
-          </p>
-        </div>
+          <div key={property.id} className="property-card">
+            <Link to={`property/${property.id}`}>
+              <img
+                src={property.main_photo}
+                alt={property.title}
+                className="img-container"
+              />
+              <h2 className="property-title">{property.title}</h2>
+            </Link>
+            <p className="property-description">{property.description}</p>
+            <p className="property-details">
+              {property.bedrooms} Bedrooms | Ksh:{property.price}
+            </p>
+          </div>
         ))}
-            </div> 
-            <Link to="/rental" className="btn btn-primary">View All</Link>            
+      </div>
+      <Link to="/rental" className="btn btn-primary">
+        View All
+      </Link>
     </div>
   );
 }
