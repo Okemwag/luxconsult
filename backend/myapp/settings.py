@@ -1,4 +1,14 @@
 import os
+import dj_database_url
+
+if 'DATABASE_URL' in os.environ:
+    # Update the 'default' database configuration
+    DATABASES['default'] = dj_database_url.config(
+        default=os.environ.get('DATABASE_URL'),
+        conn_max_age=500,
+        conn_health_checks=True,
+    )
+
 
 from pathlib import Path
 
@@ -15,7 +25,7 @@ SECRET_KEY = 'd14_gf(1i%ehgql%+!4auiuc=d&lq&o1%jw$fb5pc+l6ple5-0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = True
+DEBUG = False
 #DEBUG =  bool(os.environ.get("DEBUG", default=0))
 
 
@@ -45,6 +55,7 @@ MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -69,6 +80,8 @@ CORS_ALLOWED_ORIGINS = [
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,  
+    'DEFAULT_CACHE_BACKEND': 'django.core.cache.backends.memcached.PyMemcacheCache',
+    'DEFAULT_CACHE_TIMEOUT': 60 * 60,
 }
 
 
@@ -171,4 +184,18 @@ EMAIL_HOST_USER = 'gabrielokemwa83@gmail.com'
 EMAIL_HOST_PASSWORD = 'ubmqwhdovfejpoqx'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.PyMemcacheCache',
+        'LOCATION': '127.0.0.1:11211',
+    }
+}
+
+STORAGES = {
+    # ...
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 

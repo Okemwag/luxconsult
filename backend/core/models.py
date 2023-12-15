@@ -23,19 +23,19 @@ class Property(models.Model):
     modified = models.DateTimeField(auto_now=True, editable=False)
     property_status = models.CharField(max_length=20, 
                                        choices=PropertyStatus.choices, default=PropertyStatus.FOR_SALE)
-    photo1 = models.ImageField(upload_to='property_photos/',
+    photo1 = models.ImageField(upload_to='photos/',
                                null=True,
                                blank=True)
-    photo2 = models.ImageField(upload_to='property_photos/',
+    photo2 = models.ImageField(upload_to='photos/',
                                null=True,
                                blank=True)
-    photo3 = models.ImageField(upload_to='property_photos/', 
+    photo3 = models.ImageField(upload_to='photos/', 
                                null=True,
                                blank=True)
-    photo4 = models.ImageField(upload_to='property_photos/',
+    photo4 = models.ImageField(upload_to='photos/',
                                null=True,
                                blank=True)
-    photo5 = models.ImageField(upload_to='property_photos/',
+    photo5 = models.ImageField(upload_to='photos/',
                                null=True,
                                blank=True)
      
