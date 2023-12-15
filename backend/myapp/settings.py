@@ -25,7 +25,7 @@ SECRET_KEY = 'd14_gf(1i%ehgql%+!4auiuc=d&lq&o1%jw$fb5pc+l6ple5-0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = False
+DEBUG = True
 #DEBUG =  bool(os.environ.get("DEBUG", default=0))
 
 
@@ -193,9 +193,12 @@ CACHES = {
 }
 
 STORAGES = {
-    # ...
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
     "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
     },
 }
+
 
