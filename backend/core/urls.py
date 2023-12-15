@@ -1,6 +1,6 @@
 # properties/urls.py
 from django.urls import path
-from .views import PropertyForSaleView,PropertyForRentView, PropertyDetailView,VideoUploadView
+from .views import PropertyForSaleView,PropertyForRentView, PropertyDetailView, VideoTourView
 
 
 urlpatterns = [
@@ -10,6 +10,7 @@ urlpatterns = [
          name='property-for-rent'),
     path('detail/<int:id>/', PropertyDetailView.as_view(),
          name='property-detail'),
-    path('upload/', VideoUploadView.as_view(), name='video-upload'),
+    path('video-tour/<int:pk>/', VideoTourView.as_view(), name='video-tour-detail'),
     
 ]
+

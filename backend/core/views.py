@@ -41,22 +41,6 @@ class VideoTourView(generics.RetrieveAPIView):
     Retrieves a property video tour by id
     """
     serializer_class = VideoTourSerializer
-    queryset = Property.objects.all()
+    queryset = VideoTour.objects.all()
     lookup_field = 'id' 
 
-class VideoUploadView(APIView):
-    parser_classes = (FileUploadParser,)
-
-    def post(self, request, *args, **kwargs):
-        file_serializer = VideoTourSerializer(data=request.data)
-
-        if file_serializer.is_valid():
-            file_serializer.save()
-            return Response(file_serializer.data, status=status.HTTP_201_CREATED)
-        else:
-            return Response(file_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-        
-    def get(self, request, *args, **kwargs):
-        video = VideoTour.objects.all()
-        serializer = VideoTourSerializer(video, many=True)
-        return Response(serializer.data)

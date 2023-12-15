@@ -17,6 +17,85 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Navbar.css */
+
+.navbar {
+  background-color: #333;
+  padding: 1rem;
+  position: relative;
+  bottom: 0;
+  z-index: 999;
+  height: 75px;
+  position:sticky;
+  box-shadow: inset 0 -1px 0 0 #4f46e5;
+  width: 100%;
+  top:0%;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.navbar-logo {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin-right: 1rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    text-align: center;
+    display: none;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-item {
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+}
+
+
 .grid-1 {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -929,7 +1008,7 @@ body main .overlay {
     z-index: 2;
     background-color: rgba(17, 17, 17, 0.8);
     backdrop-filter: blur(5px);
-    width: 100%;
+    width: 80%;
     height: 100%;
 }
 
@@ -944,7 +1023,14 @@ body main .overlay a {
     padding: 10px 30px;
     transition: all 1s cubic-bezier(0.86, 0, 0.07, 1);
 }
-
+.hero-image {
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    
+}
 body section {
     height: 95vh;
     width: 100%;

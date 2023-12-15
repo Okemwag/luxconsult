@@ -56,10 +56,6 @@ function Sales() {
               />
               <h2 className="property-title">{property.title}</h2>
             </Link>
-            <p className="property-description">{property.description}</p>
-            <p className="property-details">
-              {property.bedrooms} Bedrooms | Ksh:{property.price}
-            </p>
           </div>
         ))}
       </div>
