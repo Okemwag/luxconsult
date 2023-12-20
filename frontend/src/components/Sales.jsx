@@ -16,7 +16,7 @@ function Sales() {
   }, [data]);
 
   return (
-    <div className="container grid-3">
+    <div className="container grid-3 px-16">
       <div className=" sales-container x-start">
         <h1>LATEST LAUNCHES</h1>
         <p>

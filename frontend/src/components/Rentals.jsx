@@ -16,7 +16,7 @@ function Rentals() {
   }, [data]);
 
   return (
-    <div>
+    <div className="px-16 mt-10">
       <h1 className="headerWrapper">LATEST RENTAL PROPERTIES</h1>
       <div className="container grid-3">
         {propertyData.map((property) => (
