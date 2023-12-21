@@ -65,12 +65,11 @@ MIDDLEWARE = [
 ]
 
 
-CORS_ALLOWED_ORIGINS = [
+CORS_TRUSTED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:3001",
     "https://luxconsult-o5h4.vercel.app",
-    # "https://luxconsult-production.up.railway.app",
-    # "https://luxconsult-production.up.railway.app"
+    "https://luxconsult-production.up.railway.app",
     
 ]
 
