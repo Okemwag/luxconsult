@@ -25,7 +25,7 @@ SECRET_KEY = 'd14_gf(1i%ehgql%+!4auiuc=d&lq&o1%jw$fb5pc+l6ple5-0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = True
+DEBUG = False
 #DEBUG =  bool(os.environ.get("DEBUG", default=0))
 
 
@@ -69,7 +69,8 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:3001",
     "https://luxconsult-o5h4.vercel.app",
-    "https://luxconsult-production.up.railway.app",
+    # "https://luxconsult-production.up.railway.app",
+    # "https://luxconsult-production.up.railway.app"
     
 ]
 
