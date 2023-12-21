@@ -1,7 +1,7 @@
 # properties/serializers.py
 
 from rest_framework import serializers
-from .models import Property, VideoTour
+from .models import Property
 
 class PropertySerializer(serializers.ModelSerializer):
     class Meta:
@@ -10,7 +10,3 @@ class PropertySerializer(serializers.ModelSerializer):
         
         
         
-class VideoTourSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = VideoTour
-        fields = '__all__'

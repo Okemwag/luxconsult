@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import '../App.css';
 import House1 from '../assets/House1.jpg';
 import House2 from '../assets/House2.jpg';
 import LivingRoom from '../assets/bay.jpg';
 import Couch from '../assets/couch.jpg';
 import Interior from '../assets/interior.jpg';
-import '../App.css';
 
 function HeroSection() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -23,7 +23,7 @@ function HeroSection() {
   }, [images.length]);
 
   return (
-    <div className="overlay flex-column">
+    <div className="sm:flex grid-flow-col">
       <img
         src={images[currentImageIndex]}
         alt="Property"

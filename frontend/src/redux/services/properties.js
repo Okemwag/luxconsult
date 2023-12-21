@@ -10,7 +10,10 @@ export const propertiesApi = createApi({
     getForSale: builder.query({
       query: () => `for-sale/`,
     }),
+    getDetails: builder.query({
+      query: () => `detail/{id}/`,
+    }),
   }),
 });
 
-export const { useGetForRentQuery, useGetForSaleQuery } = propertiesApi;
+export const { useGetForRentQuery, useGetForSaleQuery, useGetDetailsQuery } = propertiesApi;

@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import Hero from '../components/Hero';
+import React, { useEffect, useState } from 'react';
 import About from '../components/About';
-import Sales from '../components/Sales';
-import Rentals from '../components/Rentals';
+import Contact from '../components/ContactForm';
+import Hero from '../components/Hero';
 import Invest from '../components/Invest';
 import Landing from '../components/Landing';
 import LoadingScreen from '../components/LoadingScreen';
+import Rentals from '../components/Rentals';
+import Sales from '../components/Sales';
 
 
 function Home() {
@@ -25,6 +26,7 @@ function Home() {
         <Rentals />
         <Invest />
         <About />
+        <Contact />
         
     </div>
   );
