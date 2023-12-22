@@ -23,7 +23,7 @@ const PropertiesDetails = () => {
 
       <div className="grid grid-cols-2 gap-4 mb-8">
         <div>
-          <img src={property.main_photo} alt={property.title} className="w-full h-auto" />
+          <img src={property.main_Property} alt={property.title} className="w-full h-auto" />
         </div>
         <div>
           <p className="text-xl font-semibold mb-2">Property Details</p>
@@ -34,17 +34,17 @@ const PropertiesDetails = () => {
         </div>
       </div>
 
-      {/* Display additional photos */}
+      {/* Display additional Propertys */}
       <div className="grid grid-cols-3 gap-4 mb-8">
-        <img src={property.photo1} alt={`Photo 1`} className="w-full h-auto" />
-        <img src={property.photo2} alt={`Photo 2`} className="w-full h-auto" />
-        <img src={property.photo3} alt={`Photo 3`} className="w-full h-auto" />
-        {/* Add more photos as needed */}
+        <img src={property.Property1} alt="Property by John Doe" className="w-full h-auto" />
+        <img src={property.Property2} alt="Property by John Doe" className="w-full h-auto" />
+        <img src={property.Property3} alt="Property by John Doe" className="w-full h-auto" />
+        {/* Add more Propertys as needed */}
       </div>
 
       {/* Display house plan and video if available */}
       {property.house_plan && (
-        <img src={property.house_plan} alt={`House Plan`} className="w-full h-auto mb-4" />
+        <img src={property.house_plan} alt="Property by John Doe" className="w-full h-auto mb-4" />
       )}
       {property.video && (
         <video controls className="w-full">

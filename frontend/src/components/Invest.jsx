@@ -14,7 +14,10 @@ function Invest() {
             Embark on a financial journey where aspirations meet returns. With strategic investments, we transform your dreams into tangible dividends, crafting a future of prosperity. Unleash the power of your money and watch it grow, as we navigate the markets together, making each investment a step towards lasting success and fulfillment.
           </small>
         </div>
-        <button className="btn btn-primary mt-4">Learn More</button>
+        <button className="bg-black text-white px-2 py-1 rounded-md hover:bg-gray-800 focus:outline-none focus:ring focus:border-gray-900">
+  Learn More
+</button>
+
       </div>
     </section>
   );
