@@ -1,14 +1,12 @@
 import os
+
 import dj_database_url
 
-if 'DATABASE_URL' in os.environ:
-    # Update the 'default' database configuration
-    DATABASES['default'] = dj_database_url.config(
-        default=os.environ.get('DATABASE_URL'),
-        conn_max_age=500,
-        conn_health_checks=True,
-    )
+DATABASE_URL = os.getenv("DATABASE_URL")
 
+DATABASES = {
+    "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
+}
 
 from pathlib import Path
 
@@ -122,7 +120,7 @@ DATABASES = {
 }
 """
 
-
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -133,7 +131,7 @@ DATABASES = {
         'PORT': "37299",
     }
 }
-
+"""
 
 
 # Password validation
