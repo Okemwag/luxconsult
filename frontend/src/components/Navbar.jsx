@@ -1,101 +1,41 @@
-import React, { useState } from "react";
-import { FaBars, FaTimes } from 'react-icons/fa';
+import React, { useState } from 'react';
+import { FiAlignRight, FiX } from "react-icons/fi";
 
 const Navbar = () => {
-  const [active, setActive] = useState("Home");
-  const [toggle, setToggle] = useState(false);
+    const [show, setShow] = useState(false);
 
-  const handleNavLinkClick = (title) => {
-    setActive(title);
-  };
+    const handleShow = () => {
+        setShow(!show);
+    }
 
-  return (
-    <nav className="w-full flex py-6 justify-between items-center navbar">
-      <FaBars className="w-[28px] h-[28px] sm:hidden cursor-pointer" onClick={() => setToggle(!toggle)} />
-
-      <h1>LUXCONSULT</h1>
-
-      <ul className="list-none sm:flex hidden justify-end items-center flex-1">
-        <li
-          className={`font-poppins font-normal cursor-pointer text-[16px] ${
-            active === "Home" ? "text-white" : "text-dimWhite"
-          } mr-10`}
-          onClick={() => handleNavLinkClick("Home")}
-        >
-          <a href="#home">Home</a>
-        </li>
-        <li
-          className={`font-poppins font-normal cursor-pointer text-[16px] ${
-            active === "Features" ? "text-white" : "text-dimWhite"
-          } mr-10`}
-          onClick={() => handleNavLinkClick("Features")}
-        >
-          <a href="#features">Features</a>
-        </li>
-        <li
-          className={`font-poppins font-normal cursor-pointer text-[16px] ${
-            active === "Product" ? "text-white" : "text-dimWhite"
-          } mr-10`}
-          onClick={() => handleNavLinkClick("Product")}
-        >
-          <a href="#product">Product</a>
-        </li>
-        <li
-          className={`font-poppins font-normal cursor-pointer text-[16px] ${
-            active === "Clients" ? "text-white" : "text-dimWhite"
-          }`}
-          onClick={() => handleNavLinkClick("Clients")}
-        >
-          <a href="#clients">Clients</a>
-        </li>
-      </ul>
-
-      <div className="sm:hidden flex flex-1 justify-end items-center">
-        <FaTimes className="w-[28px] h-[28px] object-contain cursor-pointer" onClick={() => setToggle(false)} />
-
-        <div
-          className={`${
-            !toggle ? "hidden" : "flex"
-          } p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
-        >
-          <ul className="list-none flex justify-end items-start flex-1 flex-col">
-            <li
-              className={`font-poppins font-medium cursor-pointer text-[16px] ${
-                active === "Home" ? "text-white" : "text-dimWhite"
-              } mb-4`}
-              onClick={() => handleNavLinkClick("Home")}
-            >
-              <a href="#home">Home</a>
-            </li>
-            <li
-              className={`font-poppins font-medium cursor-pointer text-[16px] ${
-                active === "Features" ? "text-white" : "text-dimWhite"
-              } mb-4`}
-              onClick={() => handleNavLinkClick("Features")}
-            >
-              <a href="#features">Features</a>
-            </li>
-            <li
-              className={`font-poppins font-medium cursor-pointer text-[16px] ${
-                active === "Product" ? "text-white" : "text-dimWhite"
-              } mb-4`}
-              onClick={() => handleNavLinkClick("Product")}
-            >
-              <a href="#product">Product</a>
-            </li>
-            <li
-              className={`font-poppins font-medium cursor-pointer text-[16px] ${
-                active === "Clients" ? "text-white" : "text-dimWhite"
-              }`}
-              onClick={() => handleNavLinkClick("Clients")}
-            >
-              <a href="#clients">Clients</a>
-            </li>
-          </ul>
+    return (
+        <div className="flex justify-between items-center h-20 max-w-[1440px] mx-auto px-4 text-white bg-black">
+            <h1 className="w-full text-3xl font-bold text-white">LUXCONSULT.</h1>
+            <ul className="hidden md:flex">
+                <li className='p-4'>Home</li>
+                <li className='p-4'>Company</li>
+                <li className='p-4'>Properties</li>
+                <li className='p-4'>About</li>
+                <li className='p-4'>Contact</li>
+            </ul>
+            <div onClick={handleShow} className="block md:hidden">
+                {!show ? <FiAlignRight size={20} /> : <FiX size={20} />}
+            </div>
+            <div className={`md:hidden ${show ? 'fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500' : 'fixed left-[-100%]'}`}>
+                <h1 className="w-full text-3xl font-bold text-[#0a0a0a] m-4">LUXCONSULT.</h1>
+                <ul className="uppercase p-4">
+                    <li className='p-4 border-b border-gray-600'>Home</li>
+                    <li className='p-4 border-b border-gray-600'>Company</li>
+                    <li className='p-4 border-b border-gray-600'>Properties</li>
+                    <li className='p-4 border-b border-gray-600'>About</li>
+                    <li className='p-4'>Contact</li>
+                </ul>
+            </div>
         </div>
-      </div>
-    </nav>
-  );
-};
+    );
+}
 
 export default Navbar;
+
+  
+          

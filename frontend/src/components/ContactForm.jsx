@@ -1,7 +1,7 @@
 function ContactForm() {
 
     return (
-        <main className="relative py-28 bg-[#0a0a0a]">
+        <main className="fixed py-28 bg-[#0a0a0a]">
             <div className="relative z-10  mx-auto text-gray-600 sm:px-4 md:px-8">
                 <div className="max-w-lg space-y-3 px-4 sm:mx-auto sm:text-center sm:px-0">
                     <h3 className="text-cyan-400 font-semibold">
