@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import "../App.css";
+import PropertyCard from "../components/PropertyCard";
 import { useGetForSaleQuery } from "../redux/services/properties";
 
 function Sales() {
@@ -9,38 +8,21 @@ function Sales() {
 
   useEffect(() => {
     if (data) {
-      // Limit the photos to a maximum of four
-      const limitedData = data.results.slice(0, 4);
-      setPropertyData(limitedData);
+      setPropertyData(data.results);
     }
   }, [data]);
 
   return (
-    <div>
-      <h1 className="headerWrapper">PROPERTIES FOR SALE</h1>
-      <div className="container x-start">
+    <>
+      <h1 className="text-center italic font-bold text-xl mt-3">
+        PROPERTIES FOR SALE
+      </h1>
+      <div className="rentals-container flex xs:flex-col sm:flex-row flex-wrap gap-5 my-4 justify-center">
         {propertyData.map((property) => (
-          <Link
-            to={`/property/${property.id}`}
-            key={property.id}
-            className="img-container"
-          >
-            <img
-              src={property.main_photo}
-              alt={property.title}
-              className="property-image"
-            />
-            <div className="property-info">
-              <h2 className="property-title">{property.title}</h2>
-              <p className="property-description">{property.description}</p>
-              <p className="property-details">
-                {property.bedrooms} Bedrooms | Ksh:{property.price}
-              </p>
-            </div>
-          </Link>
+          <PropertyCard key={property.id} {...property} />
         ))}
       </div>
-    </div>
+    </>
   );
 }
 
