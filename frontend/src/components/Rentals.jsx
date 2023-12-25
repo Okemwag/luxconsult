@@ -16,26 +16,35 @@ function Rentals() {
   }, [data]);
 
   return (
-    <div className="px-16 mt-10">
-      <h1 className="headerWrapper">LATEST RENTAL PROPERTIES</h1>
-      <div className="container grid-3">
-        {propertyData.map((property) => (
-          <div key={property.id} className="property-card">
+    <section className="container mx-auto grid xs:grid-cols-1 sm:grid-cols-2 gap-5">
+      <div className="container grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {propertyData.map((property, index) => (
+          <div
+            key={property.id}
+            className={`img-container rounded-md shadow-sm overflow-hidden hover:shadow-lg ${
+              index === 0 ? "row-span-2" : ""
+            }}`}
+          >
             <Link to={`property/${property.id}`}>
               <img
                 src={property.main_photo}
                 alt={property.title}
-                className="img-container"
+                className="property-image w-full h-64 object-cover mb-2"
               />
-              <h2 className="property-title">{property.title}</h2>
+              <h2 className="property-title text-sm font-semibold ml-1 mb-2">
+                {property.title}
+              </h2>
             </Link>
           </div>
         ))}
       </div>
-      <Link to="/rental" className="btn btn-primary">
-        View All
-      </Link>
-    </div>
+      <div>
+        <h1 className="headerWrapper mb-4">LATEST RENTAL PROPERTIES</h1>
+        <Link to="/rental" className="btn btn-primary">
+          View All
+        </Link>
+      </div>
+    </section>
   );
 }
 

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import "../App.css";
+import PropertyCard from "../components/PropertyCard";
 import { useGetForRentQuery } from "../redux/services/properties";
 
 function RentalsPage() {
@@ -9,37 +8,21 @@ function RentalsPage() {
 
   useEffect(() => {
     if (data) {
-      // Limit the photos to a maximum of four
-      const limitedData = data.results.slice(0, 4);
-      setRentalsData(limitedData);
+      setRentalsData(data.results);
     }
   }, [data]);
 
   return (
-    <div>
-      <h2 className="headerWrapper">LATEST RENTAL PROPERTIES</h2>
-      <div className="rentals-container">
+    <>
+      <h1 className="text-center italic font-bold text-xl mt-3">
+        LATEST RENTAL PROPERTIES
+      </h1>
+      <div className="flex xs:flex-col sm:flex-row flex-wrap gap-5 my-4 justify-center">
         {rentalsData.map((property) => (
-          <div className="property-card" key={property.id}>
-            <div className="property-image">
-              <img src={property.main_photo} alt={property.title} />
-            </div>
-            <div className="property-details">
-              <h3>
-                <Link to={`/property/${property.id}`}>{property.title}</Link>
-              </h3>
-              <p>{property.description}</p>
-              <p>{property.address}</p>
-              <p>Bedrooms: {property.bedrooms}</p>
-              <p>Price: ${property.price}</p>
-            </div>
-          </div>
+          <PropertyCard key={property.id} {...property} />
         ))}
       </div>
-      <Link to="/rental" className="view-all-button">
-        View All
-      </Link>
-    </div>
+    </>
   );
 }
 
