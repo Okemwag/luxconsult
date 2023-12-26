@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.acdd03bd.css",
+    "main.js": "/static/js/main.37d36e84.js",
+    "static/media/House1.jpg": "/static/media/House1.8cc2d79c01efc0bdda5f.jpg",
+    "static/media/bay.jpg": "/static/media/bay.6cf9c4de9e5ab6f58e8e.jpg",
+    "static/media/couch.jpg": "/static/media/couch.0175b79fdbc3ab1fdfc1.jpg",
+    "static/media/interior.jpg": "/static/media/interior.5b8da1ea29c49d9c8be3.jpg",
+    "static/media/House2.jpg": "/static/media/House2.b653d3234bbb06c26a1f.jpg",
+    "static/media/livingroom.jpg": "/static/media/livingroom.c473ad7edb4fb24594eb.jpg",
+    "static/media/gold.jpg": "/static/media/gold.1ccc43834de30fe49953.jpg",
+    "static/media/office.jpg": "/static/media/office.5a9f3315abf9ab711eef.jpg",
+    "index.html": "/index.html",
+    "main.acdd03bd.css.map": "/static/css/main.acdd03bd.css.map",
+    "main.37d36e84.js.map": "/static/js/main.37d36e84.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.acdd03bd.css",
+    "static/js/main.37d36e84.js"
+  ]
+}
