@@ -11,7 +11,7 @@ export const propertiesApi = createApi({
       query: () => `for-sale/`,
     }),
     getDetails: builder.query({
-      query: (id) => `for-sale/${id}/`,
+      query: (id) => `detail/${id}/`,
     }),
   }),
 });
