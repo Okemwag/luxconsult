@@ -14,7 +14,7 @@ const PropertyCard = ({
     <Link
       to={`/property/${id}`}
       key={id}
-      className="rounded-md shadow-lg overflow-hidden h-full w-1/5"
+      className="rounded-md shadow-lg overflow-hidden h-full md:w-1/5 w-3/4"
     >
       <img
         src={main_photo}
