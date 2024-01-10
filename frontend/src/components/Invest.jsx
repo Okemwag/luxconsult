@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Gold from "../assets/gold.jpg";
 
 function Invest() {
+  const navigate = useNavigate();
   return (
     <section className="container mx-auto">
       <div className="grid grid-cols-1 sm:grid-cols-2 items-center">
@@ -20,7 +22,10 @@ function Invest() {
             making each investment a step towards lasting success and
             fulfillment.
           </small>
-          <button className="bg-black text-white px-2 py-1 w-1/4 rounded-md hover:bg-gray-800 focus:outline-none focus:ring focus:border-gray-900">
+          <button
+            className="bg-black text-white px-2 py-1 w-1/4 rounded-md hover:bg-gray-800 focus:outline-none focus:ring focus:border-gray-900"
+            onClick={() => navigate("/invest")}
+          >
             Learn More
           </button>
         </div>
