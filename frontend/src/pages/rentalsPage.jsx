@@ -17,7 +17,7 @@ function RentalsPage() {
       <h1 className="text-center italic font-bold text-xl mt-3">
         LATEST RENTAL PROPERTIES
       </h1>
-      <div className="flex xs:flex-col sm:flex-row flex-wrap gap-5 my-4 justify-center">
+      <div className="flex flex-col md:flex-row  flex-wrap gap-5 my-4 justify-center items-center">
         {rentalsData.map((property) => (
           <PropertyCard key={property.id} {...property} />
         ))}

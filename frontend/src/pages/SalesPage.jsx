@@ -17,7 +17,7 @@ function Sales() {
       <h1 className="text-center italic font-bold text-xl mt-3">
         PROPERTIES FOR SALE
       </h1>
-      <div className="rentals-container flex xs:flex-col sm:flex-row flex-wrap gap-5 my-4 justify-center">
+      <div className="rentals-container flex flex-col md:flex-row flex-wrap gap-5 my-4 justify-center items-center">
         {propertyData.map((property) => (
           <PropertyCard key={property.id} {...property} />
         ))}
