@@ -15,7 +15,7 @@ COPY requirements.txt .
 
 RUN set -ex && \
     pip install --upgrade pip && \
-    pip install -r /code/requirements.txt 
+    pip install -r /app/requirements.txt 
 
 
 # Copy local project
