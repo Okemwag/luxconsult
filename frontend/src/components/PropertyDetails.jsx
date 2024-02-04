@@ -7,6 +7,20 @@ const PropertiesDetails = () => {
   const { id } = useParams();
   const { data: property, isLoading, isError } = useGetDetailsQuery(id);
 
+  const handleDownloadHousePlan = () => {
+    
+    const link = document.createElement('a');
+    
+    link.href = property.house_plan;
+    
+    link.download = 'house_plan.jpg'; 
+    document.body.appendChild(link);
+    
+    link.click();
+    
+    document.body.removeChild(link);
+  };
+
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -42,9 +56,16 @@ const PropertiesDetails = () => {
         {/* Add more Propertys as needed */}
       </div>
 
-      {/* Display house plan and video if available */}
       {property.house_plan && (
-        <img src={property.house_plan} alt="Property by John Doe" className="w-full h-auto mb-4" />
+        <div className="mb-4">
+          <img src={property.house_plan} alt="House Plan" className="w-full h-auto" />
+          <button
+            className="mt-2 px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg"
+            onClick={handleDownloadHousePlan}
+          >
+            Download House Plan
+          </button>
+        </div>
       )}
       {property.video && (
         <video controls className="w-full">
