@@ -1,4 +1,13 @@
+import React from 'react';
+import { useForm } from 'react-hook-form';
+
 function ContactForm() {
+    const { register, handleSubmit, formState: { errors } } = useForm();
+
+    const onSubmit = (data) => {
+        // Send form data to luxconsultee@gmail.com
+        console.log(data); // You can replace this with your actual submission logic
+    };
 
     return (
         <div className="relative py-28 bg-[#0a0a0a]">
@@ -15,19 +24,17 @@ function ContactForm() {
                     </p>
                 </div>
                 <div className="mt-12 mx-auto px-4 p-8 bg-white sm:max-w-md sm:px-8 sm:rounded-xl">
-                    <form
-                        onSubmit={(e) => e.preventDefault()}
-                        className="space-y-5"
-                    >
+                    <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
                         <div>
                             <label className="font-medium">
                                 Full name
                             </label>
                             <input
                                 type="text"
-                                required
+                                {...register("fullName", { required: true })}
                                 className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-gray-800 shadow-sm rounded-lg"
                             />
+                            {errors.fullName && <span>This field is required</span>}
                         </div>
                         <div>
                             <label className="font-medium">
@@ -35,9 +42,10 @@ function ContactForm() {
                             </label>
                             <input
                                 type="email"
-                                required
+                                {...register("email", { required: true })}
                                 className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-gray-800 shadow-sm rounded-lg"
                             />
+                            {errors.email && <span>This field is required</span>}
                         </div>
                         <div>
                             <label className="font-medium">
@@ -47,24 +55,29 @@ function ContactForm() {
                                 <div className="absolute inset-y-0 left-3 my-auto h-6 flex items-center border-r pr-2">
                                     <select className="text-sm bg-transparent outline-none rounded-lg h-full">
                                         <option>KE</option>
-                                        
                                     </select>
                                 </div>
                                 <input
                                     type="number"
                                     placeholder="+254 700 000 000"
-                                    required
+                                    {...register("phoneNumber", { required: true })}
                                     className="w-full pl-[4.5rem] pr-3 py-2 appearance-none bg-transparent outline-none border focus:border-gray-800 shadow-sm rounded-lg"
                                 />
+                                {errors.phoneNumber && <span>This field is required</span>}
                             </div>
                         </div>
                         <div>
                             <label className="font-medium">
                                 Message
                             </label>
-                            <textarea required className="w-full mt-2 h-36 px-3 py-2 resize-none appearance-none bg-transparent outline-none border focus:border-gray-800 shadow-sm rounded-lg"></textarea>
+                            <textarea
+                                {...register("message", { required: true })}
+                                className="w-full mt-2 h-36 px-3 py-2 resize-none appearance-none bg-transparent outline-none border focus:border-gray-800 shadow-sm rounded-lg"
+                            ></textarea>
+                            {errors.message && <span>This field is required</span>}
                         </div>
                         <button
+                            type="submit"
                             className="w-full px-4 py-2 text-white font-medium bg-gray-800 hover:bg-gray-700 active:bg-gray-900 rounded-lg duration-150"
                         >
                             Submit
@@ -77,4 +90,4 @@ function ContactForm() {
     )
 }
 
-export default ContactForm
+export default ContactForm;
