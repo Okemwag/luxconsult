@@ -6,12 +6,12 @@ import Invest from "../src/components/Invest";
 import Navbar from "../src/components/Navbar";
 //import PropertyDetails from "../src/components/PropertyDetails";
 import HomePage from "../src/pages/HomePage";
+import RentalsPage from "../src/pages/RentalsPage";
 import SalesPage from "../src/pages/SalesPage";
 import Virtualtours from "../src/pages/Virtualtours";
-import RentalsPage from "../src/pages/rentalsPage";
 import "./App.css";
-import store from "./redux/store";
 import PropertyCard from "./components/PropertyCard";
+import store from "./redux/store";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
