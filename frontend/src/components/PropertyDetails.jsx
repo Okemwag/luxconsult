@@ -1,23 +1,21 @@
-// PropertiesDetails.jsx
-import React from 'react';
-import { useParams } from 'react-router-dom';
-import { useGetDetailsQuery } from '../redux/services/properties';
+import React from "react";
+import { useParams } from "react-router-dom";
+import { useGetDetailsQuery } from "../redux/services/properties";
 
 const PropertiesDetails = () => {
   const { id } = useParams();
   const { data: property, isLoading, isError } = useGetDetailsQuery(id);
 
   const handleDownloadHousePlan = () => {
-    
-    const link = document.createElement('a');
-    
+    const link = document.createElement("a");
+
     link.href = property.house_plan;
-    
-    link.download = 'house_plan.jpg'; 
+
+    link.download = "house_plan.jpg";
     document.body.appendChild(link);
-    
+
     link.click();
-    
+
     document.body.removeChild(link);
   };
 
@@ -37,7 +35,11 @@ const PropertiesDetails = () => {
 
       <div className="grid grid-cols-2 gap-4 mb-8">
         <div>
-          <img src={property.main_Property} alt={property.title} className="w-full h-auto" />
+          <img
+            src={property.main_Property}
+            alt={property.title}
+            className="w-full h-auto"
+          />
         </div>
         <div>
           <p className="text-xl font-semibold mb-2">Property Details</p>
@@ -50,15 +52,31 @@ const PropertiesDetails = () => {
 
       {/* Display additional Propertys */}
       <div className="grid grid-cols-3 gap-4 mb-8">
-        <img src={property.Property1} alt="Property by John Doe" className="w-full h-auto" />
-        <img src={property.Property2} alt="Property by John Doe" className="w-full h-auto" />
-        <img src={property.Property3} alt="Property by John Doe" className="w-full h-auto" />
+        <img
+          src={property.Property1}
+          alt="Property by John Doe"
+          className="w-full h-auto"
+        />
+        <img
+          src={property.Property2}
+          alt="Property by John Doe"
+          className="w-full h-auto"
+        />
+        <img
+          src={property.Property3}
+          alt="Property by John Doe"
+          className="w-full h-auto"
+        />
         {/* Add more Propertys as needed */}
       </div>
 
       {property.house_plan && (
         <div className="mb-4">
-          <img src={property.house_plan} alt="House Plan" className="w-full h-auto" />
+          <img
+            src={property.house_plan}
+            alt="House Plan"
+            className="w-full h-auto"
+          />
           <button
             className="mt-2 px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg"
             onClick={handleDownloadHousePlan}
