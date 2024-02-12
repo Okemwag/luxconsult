@@ -2,6 +2,7 @@ frontend/node_modules/
 backend/venv/
 luxenv/
 __pycache__/
+frontend/.env
 *.py[cod]
 *.log
 *.db
