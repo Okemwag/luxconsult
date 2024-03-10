@@ -36,14 +36,16 @@ const PropertiesDetails = () => {
       <div className="grid grid-cols-2 gap-4 mb-8">
         <div>
           <img
-            src={property.main_Property}
+            src={property.main_photo}
             alt={property.title}
-            className="w-full h-auto"
+            className="w-full h-80"
           />
         </div>
         <div>
           <p className="text-xl font-semibold mb-2">Property Details</p>
-          <p>Price: {property.price}</p>
+          <p>
+            Price: {property.price_currency}, {property.price}
+          </p>
           <p>Bedrooms: {property.bedrooms}</p>
           <p>Status: {property.property_status}</p>
           {/* Add more details as needed */}
@@ -52,20 +54,35 @@ const PropertiesDetails = () => {
 
       {/* Display additional Propertys */}
       <div className="grid grid-cols-3 gap-4 mb-8">
+        {/**
+        current data returns photo1,photo2,photo3...
+        would be preferable to have an array of photos
+        but the below code will work for now
+       */}
         <img
-          src={property.Property1}
+          src={property.photo1}
           alt="Property by John Doe"
-          className="w-full h-auto"
+          className="w-full h-60"
         />
         <img
-          src={property.Property2}
+          src={property.photo2}
           alt="Property by John Doe"
-          className="w-full h-auto"
+          className="w-full h-60"
         />
         <img
-          src={property.Property3}
+          src={property.photo3}
           alt="Property by John Doe"
-          className="w-full h-auto"
+          className="w-full h-60"
+        />
+        <img
+          src={property.photo4}
+          alt="Property by John Doe"
+          className="w-full h-60"
+        />
+        <img
+          src={property.photo5}
+          alt="Property by John Doe"
+          className="w-full h-60"
         />
         {/* Add more Propertys as needed */}
       </div>
