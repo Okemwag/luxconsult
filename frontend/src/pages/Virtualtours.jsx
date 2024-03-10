@@ -7,7 +7,7 @@ const VideoPage = () => {
   useEffect(() => {
     const fetchVideo = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:8000/api/v1/core/4/video/');
+        const response = await fetch('http://102.133.146.44/api/v1/core/4/video/');
         const data = await response.json();
         setVideoUrl(data.video_url);
       } catch (error) {
