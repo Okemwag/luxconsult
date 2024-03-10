@@ -59,7 +59,7 @@ MIDDLEWARE = [
 ]
 
 
-CSRF_TRUSTED_ORIGINS = ['https://*.railway.app','https://*.127.0.0.1','http://102.133.146.44']
+CSRF_TRUSTED_ORIGINS = ['https://*.127.0.0.1','http://*.102.133.146.44']
 
 
 
