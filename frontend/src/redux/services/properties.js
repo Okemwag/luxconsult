@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const propertiesApi = createApi({
   reducerPath: "propertiesApi",
   // baseQuery: fetchBaseQuery({ baseUrl: "https://admin.luxconsult.co.ke/api/v1/core/" }),
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:8000/api/v1/core/" }),
+  baseQuery: fetchBaseQuery({ baseUrl: "http://102.133.146.44/api/v1/core/" }),
   endpoints: (builder) => ({
     getForRent: builder.query({
       query: () => `for-rent/`,
