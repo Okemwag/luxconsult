@@ -28,7 +28,7 @@ yarn-debug.log*
 yarn-error.log*
 frontend/.pnp
 frontend.pnp.js
-//frontend/build
+#frontend/build
 
 # testing
 /coverage

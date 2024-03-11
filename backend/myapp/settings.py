@@ -19,7 +19,7 @@ SECRET_KEY = 'd14_gf(1i%ehgql%+!4auiuc=d&lq&o1%jw$fb5pc+l6ple5-0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = True
+DEBUG = False
 #DEBUG =  bool(os.environ.get("DEBUG", default=0))
 
 
@@ -59,7 +59,7 @@ MIDDLEWARE = [
 ]
 
 
-CSRF_TRUSTED_ORIGINS = ['https://*.127.0.0.1','http://*.102.133.146.44']
+CSRF_TRUSTED_ORIGINS = ['https://*.127.0.0.1','http://*.102.133.146.44', 'http://*.luxadmin.live']
 
 
 
@@ -68,6 +68,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3001",
     "https://luxconsult-o5h4.vercel.app",
     "http://102.133.146.44",
+    "https://www.luxconsult.co.ke/",
     
 ]
 
