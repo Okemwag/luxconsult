@@ -68,7 +68,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3001",
     "https://luxconsult-o5h4.vercel.app",
     "http://102.133.146.44",
-    "https://www.luxconsult.co.ke/",
+    "https://www.luxconsult.co.ke",
     
 ]
 
