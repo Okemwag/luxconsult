@@ -59,7 +59,7 @@ MIDDLEWARE = [
 ]
 
 
-CSRF_TRUSTED_ORIGINS = ['https://*.127.0.0.1','http://*.102.133.146.44', 'http://*.luxadmin.live']
+CSRF_TRUSTED_ORIGINS = ['https://*.127.0.0.1','http://*.102.133.146.44', 'https://*.luxadmin.live','https://luxadmin.live']
 
 
 
