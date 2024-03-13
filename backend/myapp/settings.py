@@ -23,8 +23,7 @@ DEBUG = False
 #DEBUG =  bool(os.environ.get("DEBUG", default=0))
 
 
-ALLOWED_HOSTS = ["https://www.luxconsult.co.ke","luxadmin.live",
-                 "102.133.146.44"]
+ALLOWED_HOSTS = ["luxadmin.live", "102.133.146.44"]
 #ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
 
 
