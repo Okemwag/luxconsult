@@ -22,7 +22,8 @@ RUN set -ex && \
 COPY . .
 
 # Expose port 8000
-EXPOSE $PORT
+EXPOSE $PORT 
 
+RUN python manage.py collectstatic --noinput
 
 CMD python manage.py runserver 0.0.0.0:$PORT
