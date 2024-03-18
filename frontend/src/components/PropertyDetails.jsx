@@ -54,11 +54,7 @@ const PropertiesDetails = () => {
 
       {/* Display additional Propertys */}
       <div className="grid grid-cols-3 gap-4 mb-8">
-        {/**
-        current data returns photo1,photo2,photo3...
-        would be preferable to have an array of photos
-        but the below code will work for now
-       */}
+        
         <img
           src={property.photo1}
           alt="Property by John Doe"
