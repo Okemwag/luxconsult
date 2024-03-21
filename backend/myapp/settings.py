@@ -59,14 +59,12 @@ MIDDLEWARE = [
 ]
 
 
-CSRF_TRUSTED_ORIGINS = ['https://*.127.0.0.1','http://*.102.133.146.44', 'https://*.luxadmin.live','https://luxadmin.live']
+CSRF_TRUSTED_ORIGINS = ['https://*.luxadmin.live','https://luxadmin.live']
 
 
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://localhost:3001",
-    "https://luxconsult-o5h4.vercel.app",
+    
     "http://102.133.146.44",
     "https://www.luxconsult.co.ke",
     
