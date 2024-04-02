@@ -17,7 +17,7 @@ class Property(models.Model):
     price = MoneyField(max_digits=8, decimal_places=0, default_currency='KES')
     bedrooms = models.IntegerField(verbose_name='Number of bedrooms',
                                    default=4)
-    main_photo = models.ImageField(upload_to='photos/%Y/%m/%d/')
+    main_photo = models.ImageField(upload_to='photos')
     is_published = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True, editable=False)
     modified = models.DateTimeField(auto_now=True, editable=False)
@@ -42,7 +42,7 @@ class Property(models.Model):
     house_plan = models.ImageField(upload_to='photos/',
                                  null=True,
                                  blank=True)
-    video = models.FileField(upload_to='videos/%Y/%m/%d/',null=True, blank=True)
+    video = models.FileField(upload_to='videos/',null=True, blank=True)
                              
     
     def __str__(self):
