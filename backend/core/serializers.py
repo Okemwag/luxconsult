@@ -18,7 +18,7 @@ class PropertySerializer(serializers.ModelSerializer):
     def get_main_photo(self, property):
         
         photo_url = property.main_photo.url
-        base_url = 'https://luxadmin.live'
+        base_url = 'http://102.133.146.44:80'
         return base_url + photo_url
         
         
