@@ -5,6 +5,11 @@ from .models import Property
 
 class PropertySerializer(serializers.ModelSerializer):
     main_photo = serializers.SerializerMethodField()
+    photo1 = serializers.SerializerMethodField()
+    photo2 = serializers.SerializerMethodField()
+    photo3 = serializers.SerializerMethodField()
+    photo4 = serializers.SerializerMethodField()
+    photo5 = serializers.SerializerMethodField()
 
 
     
@@ -13,7 +18,8 @@ class PropertySerializer(serializers.ModelSerializer):
         model = Property
         fields = ['id','title', 'address',"main_photo",
                    'price','bedrooms','is_published', 'created'
-                   ,'modified','property_status']
+                   ,'modified','property_status',
+                   'photo1','photo2','photo3','photo4','photo5']
         
     def get_main_photo(self, property):
         
@@ -33,7 +39,7 @@ class PropertySerializer(serializers.ModelSerializer):
     def get_photo2(self, property):
         
         photo_url = property.photo2.url
-        # base_url = 'http://102.133.146.44:80'
+        
         base_url = 'https://luxadmin.live'
         return base_url + photo_url
 
