@@ -30,40 +30,45 @@ class PropertySerializer(serializers.ModelSerializer):
         
     
     def get_photo1(self, property):
-        
-        photo_url = property.photo1.url
-        # base_url = 'http://102.133.146.44:80'
-        base_url = 'https://luxadmin.live'
-        return base_url + photo_url
+        if property.photo1:  # Check if photo1 field has a value
+            photo_url = property.photo1.url
+            base_url = 'https://luxadmin.live'
+            return base_url + photo_url
+        else:
+            return None  # or any default value you want to return
+
     
     def get_photo2(self, property):
+        if property.photo2:  # Check if photo1 field has a value
+            photo_url = property.photo2.url
+            base_url = 'https://luxadmin.live'
+            return base_url + photo_url
+        else:
+            return None  # or any default value you want to return
         
-        photo_url = property.photo2.url
-        
-        base_url = 'https://luxadmin.live'
-        return base_url + photo_url
-
     def get_photo3(self, property):
+        if property.photo3:  # Check if photo1 field has a value
+            photo_url = property.photo3.url
+            base_url = 'https://luxadmin.live'
+            return base_url + photo_url
+        else:
+            return None  # or any default value you want to return
         
-        photo_url = property.photo3.url
-        # base_url = 'http://102.133.146.44:80'
-        base_url = 'https://luxadmin.live'
-        return base_url + photo_url
-    
     def get_photo4(self, property):
-        
-        photo_url = property.photo4.url
-        # base_url = 'http://102.133.146.44:80'
-        base_url = 'https://luxadmin.live'
-        return base_url + photo_url
+        if property.photo4:  # Check if photo1 field has a value
+            photo_url = property.photo4.url
+            base_url = 'https://luxadmin.live'
+            return base_url + photo_url
+        else:
+            return None  # or any default value you want to return
     
     def get_photo5(self, property):
-        
-        photo_url = property.photo5.url
-        # base_url = 'http://102.133.146.44:80'
-        base_url = 'https://luxadmin.live'
-        return base_url + photo_url
-        
+        if property.photo5:  # Check if photo1 field has a value
+            photo_url = property.photo5.url
+            base_url = 'https://luxadmin.live'
+            return base_url + photo_url
+        else:
+            return None  # or any default value you want to return
         
     
     
